@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:portType name="Quant">
+
+   </wsdl:portType>
+
+   <wsdl:binding name="QuantSoapBinding" type="impl:Quant">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+   </wsdl:binding>
+
+   <wsdl:service name="QuantService">
+
+      <wsdl:port binding="impl:QuantSoapBinding" name="Quant">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/Quant"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

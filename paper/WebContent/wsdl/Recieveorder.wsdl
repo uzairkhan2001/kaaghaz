@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="insertRecieveOrder">
+    <complexType>
+     <sequence>
+      <element name="purchaseID" type="xsd:int"/>
+      <element name="intact" type="xsd:int"/>
+      <element name="damage" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertRecieveOrderResponse">
+    <complexType>
+     <sequence>
+      <element name="insertRecieveOrderReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insertRecieveOrderRequest">
+
+      <wsdl:part element="impl:insertRecieveOrder" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertRecieveOrderResponse">
+
+      <wsdl:part element="impl:insertRecieveOrderResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Recieveorder">
+
+      <wsdl:operation name="insertRecieveOrder">
+
+         <wsdl:input message="impl:insertRecieveOrderRequest" name="insertRecieveOrderRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertRecieveOrderResponse" name="insertRecieveOrderResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RecieveorderSoapBinding" type="impl:Recieveorder">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="insertRecieveOrder">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertRecieveOrderRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertRecieveOrderResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RecieveorderService">
+
+      <wsdl:port binding="impl:RecieveorderSoapBinding" name="Recieveorder">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/Recieveorder"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

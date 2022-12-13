@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAllRecievedRecords">
+    <complexType/>
+   </element>
+   <element name="getAllRecievedRecordsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllRecievedRecordsReturn" type="impl:Received"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Received">
+    <sequence>
+     <element name="purchaseId" type="xsd:int"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="total_Quan" type="xsd:int"/>
+     <element name="receive_Quan" type="xsd:int"/>
+     <element name="damage_Quan" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllRecievedRecordsResponse">
+
+      <wsdl:part element="impl:getAllRecievedRecordsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllRecievedRecordsRequest">
+
+      <wsdl:part element="impl:getAllRecievedRecords" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GetAllRecievedRecords">
+
+      <wsdl:operation name="getAllRecievedRecords">
+
+         <wsdl:input message="impl:getAllRecievedRecordsRequest" name="getAllRecievedRecordsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllRecievedRecordsResponse" name="getAllRecievedRecordsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GetAllRecievedRecordsSoapBinding" type="impl:GetAllRecievedRecords">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllRecievedRecords">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllRecievedRecordsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllRecievedRecordsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GetAllRecievedRecordsService">
+
+      <wsdl:port binding="impl:GetAllRecievedRecordsSoapBinding" name="GetAllRecievedRecords">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/GetAllRecievedRecords"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

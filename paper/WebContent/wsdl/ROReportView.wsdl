@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="report2">
+    <complexType/>
+   </element>
+   <element name="report2Response">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="report2Return" type="impl:ROReport"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ROReport">
+    <sequence>
+     <element name="recOrdId" type="xsd:int"/>
+     <element name="purchaseId" type="xsd:int"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="receiveIntact" type="xsd:int"/>
+     <element name="receiveDamage" type="xsd:int"/>
+     <element name="quantity" type="xsd:int"/>
+     <element name="time" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="report2Request">
+
+      <wsdl:part element="impl:report2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="report2Response">
+
+      <wsdl:part element="impl:report2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ROReportView">
+
+      <wsdl:operation name="report2">
+
+         <wsdl:input message="impl:report2Request" name="report2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:report2Response" name="report2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ROReportViewSoapBinding" type="impl:ROReportView">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="report2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="report2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="report2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ROReportViewService">
+
+      <wsdl:port binding="impl:ROReportViewSoapBinding" name="ROReportView">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/ROReportView"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

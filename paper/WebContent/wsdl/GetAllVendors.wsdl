@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAllVendor">
+    <complexType>
+     <sequence>
+      <element name="SizeID" type="xsd:int"/>
+      <element name="WeightID" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllVendorResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllVendorReturn" type="impl:Record"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Record">
+    <sequence>
+     <element name="id" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllVendorResponse">
+
+      <wsdl:part element="impl:getAllVendorResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllVendorRequest">
+
+      <wsdl:part element="impl:getAllVendor" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GetAllVendors">
+
+      <wsdl:operation name="getAllVendor">
+
+         <wsdl:input message="impl:getAllVendorRequest" name="getAllVendorRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllVendorResponse" name="getAllVendorResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GetAllVendorsSoapBinding" type="impl:GetAllVendors">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllVendor">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllVendorRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllVendorResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GetAllVendorsService">
+
+      <wsdl:port binding="impl:GetAllVendorsSoapBinding" name="GetAllVendors">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/GetAllVendors"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
