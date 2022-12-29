@@ -5,7 +5,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="getAllSizeID">
-    <complexType/>
+    <complexType>
+     <sequence>
+      <element name="rawid" type="xsd:int"/>
+     </sequence>
+    </complexType>
    </element>
    <element name="getAllSizeIDResponse">
     <complexType>

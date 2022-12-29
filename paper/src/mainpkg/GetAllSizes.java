@@ -8,13 +8,13 @@ import java.sql.Statement;
 public class GetAllSizes {
 	Record[] data = null;
 
-	public Record[] getAllSizeID() {
+	public Record[] getAllSizeID(int rawid) {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from size");
+			ResultSet rs = stmt.executeQuery("select distinct catalog.sizeid,size.size FROM `catalog` join `size` on size.ID = catalog.sizeID where rawmaterial_id = "+ rawid);
 
 			rs.last();
 

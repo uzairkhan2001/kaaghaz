@@ -11,6 +11,7 @@
       <parameter name="wsdlPortType" value="GetAllSizes"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://mainpkg" xmlns:retNS="http://mainpkg" xmlns:rtns="http://mainpkg" name="getAllSizeID" qname="operNS:getAllSizeID" returnQName="retNS:getAllSizeIDReturn" returnType="rtns:Record" soapAction="">
+        <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rawid" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="getAllSizeID"/>
 
