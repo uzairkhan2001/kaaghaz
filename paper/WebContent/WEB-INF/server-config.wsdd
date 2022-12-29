@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -76,11 +76,11 @@
    <ns1:parameter qname="ns7:damage" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="insertRecieveOrder"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Recieveorder"/>
-  <ns1:parameter name="className" value="mainpkg.Recieveorder"/>
-  <ns1:parameter name="wsdlServicePort" value="Recieveorder"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
+  <ns1:parameter name="wsdlServicePort" value="Recieveorder"/>
+  <ns1:parameter name="className" value="mainpkg.Recieveorder"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="RecieveorderService"/>
  </ns1:service>
@@ -98,10 +98,10 @@
  </ns1:service>
  <ns1:service name="Reportorder" provider="java:RPC" style="document" use="literal">
   <ns1:parameter name="allowedMethods" value="*"/>
-  <ns1:parameter name="wsdlPortType" value="Reportorder"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="wsdlServicePort" value="Reportorder"/>
+  <ns1:parameter name="wsdlPortType" value="Reportorder"/>
   <ns1:parameter name="className" value="mainpkg.Reportorder"/>
+  <ns1:parameter name="wsdlServicePort" value="Reportorder"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="ReportorderService"/>
  </ns1:service>
@@ -120,10 +120,10 @@
  </ns1:service>
  <ns1:service name="Quant" provider="java:RPC" style="document" use="literal">
   <ns1:parameter name="allowedMethods" value="*"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Quant"/>
-  <ns1:parameter name="className" value="mainpkg.Quant"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlServicePort" value="Quant"/>
+  <ns1:parameter name="className" value="mainpkg.Quant"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="QuantService"/>
  </ns1:service>
@@ -132,11 +132,11 @@
    <ns1:parameter qname="ns11:SizeID" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getAllweight"/>
-  <ns1:parameter name="wsdlPortType" value="GetAllWeights"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServicePort" value="GetAllWeights"/>
+  <ns1:parameter name="wsdlPortType" value="GetAllWeights"/>
   <ns1:parameter name="className" value="mainpkg.GetAllWeights"/>
+  <ns1:parameter name="wsdlServicePort" value="GetAllWeights"/>
+  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="GetAllWeightsService"/>
  </ns1:service>
@@ -162,14 +162,16 @@
  </ns1:service>
  <ns1:service name="GetAllRecievedRecords" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="getAllRecievedRecords" qname="ns13:getAllRecievedRecords" returnQName="ns13:getAllRecievedRecordsReturn" returnType="ns13:Received" soapAction="" xmlns:ns13="http://mainpkg"/>
+  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="wsdlServicePort" value="GetAllRecievedRecords"/>
+  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
+  <ns1:parameter name="className" value="mainpkg.GetAllRecievedRecords"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="allowedMethods" value="getAllRecievedRecords"/>
   <ns1:parameter name="wsdlPortType" value="GetAllRecievedRecords"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServicePort" value="GetAllRecievedRecords"/>
-  <ns1:parameter name="className" value="mainpkg.GetAllRecievedRecords"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="GetAllRecievedRecordsService"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
+  <ns1:parameter name="sendXsiTypes" value="false"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns14:Received" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Received" xmlns:ns14="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="ROReportView" provider="java:RPC" style="wrapped" use="literal">

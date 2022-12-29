@@ -16,7 +16,7 @@ public class ROReportView {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT recieveorder.ID,paperpurchaseorder.ID,papersize.Size,paperweight.Weight,papervendor.Name,paperpurchaseorder.quantity,recieveorder.`Receive Intact`,recieveorder.`Receive Damage`,recieveorder.Time FROM recieveorder,papersize,papervendor,paperweight,paperpurchaseorder WHERE papersize.id = paperpurchaseorder.SizeID AND paperweight.id = paperpurchaseorder.WeightID AND papervendor.ID = paperpurchaseorder.VendorID AND recieveorder.`Purchase ID` = paperpurchaseorder.ID ORDER BY `recieveorder`.`ID` ASC");
+			ResultSet rs = stmt.executeQuery("SELECT recieveorder.ID,purchaseorder.ID,size.Size,weight.Weight,vendor.Name,purchaseorder.quantity,recieveorder.`Receive Intact`,recieveorder.`Receive Damage`,recieveorder.Time FROM recieveorder,size,vendor,weight,purchaseorder WHERE size.id = purchaseorder.SizeID AND weight.id = purchaseorder.WeightID AND vendor.ID = purchaseorder.VendorID AND recieveorder.`Purchase ID` = purchaseorder.ID ORDER BY `recieveorder`.`ID` ASC");
 
 			rs.last();
 

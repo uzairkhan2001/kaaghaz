@@ -12,7 +12,7 @@ public class GetAllVendors {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp","root","");
 			Statement stmt=con.createStatement();
-			ResultSet rs= stmt.executeQuery("select distinct papervendorcatalog.vendorid,papervendor.Name FROM `papervendorcatalog` join `papervendor` on papervendor.ID = papervendorcatalog.VendorID where sizeid = " + SizeID + " AND WeightID = "+ WeightID);
+			ResultSet rs= stmt.executeQuery("select distinct catalog.vendorid,vendor.Name FROM `catalog` join `vendor` on vendor.ID = catalog.VendorID where sizeid = " + SizeID + " AND WeightID = "+ WeightID);
 			rs.last();
 			
 			data = new Record[rs.getRow()];

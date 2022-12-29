@@ -15,7 +15,7 @@ public class POReportView {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT paperpurchaseorder.ID,papersize.Size,paperweight.Weight,papervendor.Name,paperpurchaseorder.Quantity,paperpurchaseorder.Time FROM papersize,papervendor,paperweight,paperpurchaseorder WHERE papersize.id = paperpurchaseorder.SizeID AND paperweight.id = paperpurchaseorder.WeightID AND papervendor.ID = paperpurchaseorder.VendorID GROUP BY paperpurchaseorder.ID;");
+			ResultSet rs = stmt.executeQuery("SELECT purchaseorder.ID,size.Size,weight.Weight,vendor.Name,purchaseorder.Quantity,purchaseorder.Time FROM size,vendor,weight,purchaseorder WHERE size.id = purchaseorder.SizeID AND weight.id = purchaseorder.WeightID AND vendor.ID = purchaseorder.VendorID GROUP BY purchaseorder.ID;");
 
 			rs.last();
 

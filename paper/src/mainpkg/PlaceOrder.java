@@ -11,7 +11,7 @@ public class PlaceOrder {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp","root","");
 				Statement stmt=con.createStatement();
-				 stmt.executeUpdate("insert into paperpurchaseorder (WeightID,SizeID,VendorID,Quantity,Time) VALUES('"+WeightID+"','"+SizeID+"','"+VendorID+"','"+Quantity+"',now())");
+				 stmt.executeUpdate("insert into purchaseorder (WeightID,SizeID,VendorID,Quantity,Time) VALUES('"+WeightID+"','"+SizeID+"','"+VendorID+"','"+Quantity+"',now())");
 				  con.close();
 			} catch (Exception e) {
 				e.printStackTrace();

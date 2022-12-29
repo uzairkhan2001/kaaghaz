@@ -14,7 +14,7 @@ public class GetPOreport {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("select ID,(select size from papersize where id = paperpurchaseorder.sizeid),(select weight from paperweight where id = paperpurchaseorder.weightid),(select name from papervendor where id = paperpurchaseorder.vendorid),Quantity,time from paperpurchaseorder;");
+			ResultSet rs = stmt.executeQuery("select ID,(select size from size where id = purchaseorder.sizeid),(select weight from weight where id = purchaseorder.weightid),(select name from vendor where id = purchaseorder.vendorid),Quantity,time from purchaseorder;");
 
 			rs.last();
 

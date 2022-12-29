@@ -15,7 +15,7 @@ public class GetQuantity {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp","root","");
 			Statement stmt=con.createStatement();
-			ResultSet rs= stmt.executeQuery("select paperpurchaseorder.Quantity,SUM(recieveorder.`receive intact`) AS `Received Intact` from paperpurchaseorder,recieveorder where paperpurchaseorder.id = recieveorder.`purchase id` AND paperpurchaseorder.id = "+ ID+" AND recieveorder.`purchase id` = "+ ID);
+			ResultSet rs= stmt.executeQuery("select purchaseorder.Quantity,SUM(recieveorder.`receive intact`) AS `Received Intact` from purchaseorder,recieveorder where purchaseorder.id = recieveorder.`purchase id` AND purchaseorder.id = "+ ID+" AND recieveorder.`purchase id` = "+ ID);
 			
 			
 			while(rs.next()) {

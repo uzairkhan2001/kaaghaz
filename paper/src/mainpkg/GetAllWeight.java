@@ -12,7 +12,7 @@ public class GetAllWeight {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp","root","");
 			Statement stmt=con.createStatement();
-			ResultSet rs= stmt.executeQuery("select distinct papervendorcatalog.weightid,paperweight.Weight FROM `papervendorcatalog` join `paperweight` on paperweight.ID = papervendorcatalog.WeightID where sizeid = "+ SizeID);
+			ResultSet rs= stmt.executeQuery("select distinct catalog.weightid,weight.Weight FROM `catalog` join `weight` on weight.ID = catalog.WeightID where sizeid = "+ SizeID);
 			
 			rs.last();
 

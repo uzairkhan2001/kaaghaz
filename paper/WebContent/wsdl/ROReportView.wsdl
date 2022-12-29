@@ -21,9 +21,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="size" nillable="true" type="xsd:string"/>
      <element name="weight" nillable="true" type="xsd:string"/>
      <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="quantity" type="xsd:int"/>
      <element name="receiveIntact" type="xsd:int"/>
      <element name="receiveDamage" type="xsd:int"/>
-     <element name="quantity" type="xsd:int"/>
      <element name="time" nillable="true" type="xsd:string"/>
     </sequence>
    </complexType>
