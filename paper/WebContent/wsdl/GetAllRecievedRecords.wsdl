@@ -17,6 +17,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <complexType name="Received">
     <sequence>
      <element name="purchaseId" type="xsd:int"/>
+     <element name="raw" nillable="true" type="xsd:string"/>
      <element name="size" nillable="true" type="xsd:string"/>
      <element name="weight" nillable="true" type="xsd:string"/>
      <element name="vendor" nillable="true" type="xsd:string"/>

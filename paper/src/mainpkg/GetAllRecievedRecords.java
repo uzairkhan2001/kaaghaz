@@ -14,7 +14,7 @@ public class GetAllRecievedRecords {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT purchaseorder.ID,size.Size,weight.Weight,vendor.Name,purchaseorder.Quantity,SUM(recieveorder.`Receive Intact`) AS `Received Intact`,SUM(recieveorder.`Receive Damage`) AS `Received Damaged` FROM size,vendor,weight,purchaseorder  LEFT JOIN recieveorder ON purchaseorder.ID= recieveorder.`Purchase ID` WHERE size.id = purchaseorder.SizeID AND weight.id = purchaseorder.WeightID AND vendor.ID = purchaseorder.VendorID GROUP BY purchaseorder.ID;");
+			ResultSet rs = stmt.executeQuery("SELECT purchaseorder.ID,rawmaterialtype.RawMaterialName,size.Size,weight.Weight,vendor.Name,purchaseorder.Quantity,SUM(recieveorder.`Receive Intact`) AS `Received Intact`,SUM(recieveorder.`Receive Damage`) AS `Received Damaged` FROM size,vendor,weight,rawmaterialtype,purchaseorder  LEFT JOIN recieveorder ON purchaseorder.ID= recieveorder.`Purchase ID` WHERE size.id = purchaseorder.SizeID AND weight.id = purchaseorder.WeightID AND vendor.ID = purchaseorder.VendorID AND rawmaterialtype.RawMaterialId = purchaseorder.rawmaterial_ID GROUP BY purchaseorder.ID;");
 
 			rs.last();
 
@@ -27,12 +27,13 @@ public class GetAllRecievedRecords {
 				
 				data[i] = new Received();
 				data[i].purchaseId = rs.getInt(1);
-				data[i].size = rs.getString(2);
-				data[i].weight = rs.getString(3);
-				data[i].vendor = rs.getString(4);
-				data[i].total_Quan = rs.getInt(5);
-				data[i].receive_Quan = rs.getInt(6);
-				data[i].damage_Quan = rs.getInt(7);
+				data[i].raw = rs.getString(2);
+				data[i].size = rs.getString(3);
+				data[i].weight = rs.getString(4);
+				data[i].vendor = rs.getString(5);
+				data[i].total_Quan = rs.getInt(6);
+				data[i].receive_Quan = rs.getInt(7);
+				data[i].damage_Quan = rs.getInt(8);
 
 				i++;
 			}
