@@ -7,6 +7,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="createPurchaseOrder">
     <complexType>
      <sequence>
+      <element name="rawID" type="xsd:int"/>
       <element name="SizeID" type="xsd:int"/>
       <element name="WeightID" type="xsd:int"/>
       <element name="VendorID" type="xsd:int"/>

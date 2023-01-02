@@ -11,6 +11,7 @@
       <parameter name="wsdlPortType" value="PlaceOrder"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://mainpkg" name="createPurchaseOrder" qname="operNS:createPurchaseOrder" soapAction="">
+        <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:rawID" type="tns:int"/>
         <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:SizeID" type="tns:int"/>
         <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:WeightID" type="tns:int"/>
         <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:VendorID" type="tns:int"/>
