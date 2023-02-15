@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAllReceivePrinting">
+    <complexType/>
+   </element>
+   <element name="getAllReceivePrintingResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllReceivePrintingReturn" type="impl:ReceivedPrinting"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ReceivedPrinting">
+    <sequence>
+     <element name="printID" type="xsd:int"/>
+     <element name="purchaseId" type="xsd:int"/>
+     <element name="raw" nillable="true" type="xsd:string"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="total_Quan" type="xsd:int"/>
+     <element name="receive_Quan" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllReceivePrintingResponse">
+
+      <wsdl:part element="impl:getAllReceivePrintingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllReceivePrintingRequest">
+
+      <wsdl:part element="impl:getAllReceivePrinting" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GetAllReceivePrinting">
+
+      <wsdl:operation name="getAllReceivePrinting">
+
+         <wsdl:input message="impl:getAllReceivePrintingRequest" name="getAllReceivePrintingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllReceivePrintingResponse" name="getAllReceivePrintingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GetAllReceivePrintingSoapBinding" type="impl:GetAllReceivePrinting">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllReceivePrinting">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllReceivePrintingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllReceivePrintingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GetAllReceivePrintingService">
+
+      <wsdl:port binding="impl:GetAllReceivePrintingSoapBinding" name="GetAllReceivePrinting">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/GetAllReceivePrinting"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
