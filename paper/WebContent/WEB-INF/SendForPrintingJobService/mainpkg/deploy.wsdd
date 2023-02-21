@@ -12,6 +12,7 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://mainpkg" xmlns:retNS="http://mainpkg" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendPrintingJob" qname="operNS:sendPrintingJob" returnQName="retNS:sendPrintingJobReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:purchaseID" type="tns:int"/>
+        <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:vendor" type="tns:string"/>
         <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:qty" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="sendPrintingJob"/>
