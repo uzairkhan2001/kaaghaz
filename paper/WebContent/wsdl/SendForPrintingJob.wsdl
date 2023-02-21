@@ -8,6 +8,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="purchaseID" type="xsd:int"/>
+      <element name="vendor" type="xsd:string"/>
       <element name="qty" type="xsd:int"/>
      </sequence>
     </complexType>
