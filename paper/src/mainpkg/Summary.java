@@ -1,13 +1,10 @@
 package mainpkg;
 
-public class Received {
-	public int purchaseId;
+public class Summary {
 	public String raw;
 	public String size;
 	public String weight;
-	public String vendor;
-	public int total_Quan;
 	public int receive_Quan;
 	public int damage_Quan;
-	public String time;
+	public int print_Quan;
 }

@@ -4,13 +4,13 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="getAllRecievedRecords">
+   <element name="getAllCompletedRecRecords">
     <complexType/>
    </element>
-   <element name="getAllRecievedRecordsResponse">
+   <element name="getAllCompletedRecRecordsResponse">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="getAllRecievedRecordsReturn" type="impl:Received"/>
+      <element maxOccurs="unbounded" name="getAllCompletedRecRecordsReturn" type="impl:Received"/>
      </sequence>
     </complexType>
    </element>
@@ -30,31 +30,31 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getAllRecievedRecordsResponse">
+   <wsdl:message name="getAllCompletedRecRecordsResponse">
 
-      <wsdl:part element="impl:getAllRecievedRecordsResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="getAllRecievedRecordsRequest">
-
-      <wsdl:part element="impl:getAllRecievedRecords" name="parameters">
+      <wsdl:part element="impl:getAllCompletedRecRecordsResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:portType name="GetAllRecievedRecords">
+   <wsdl:message name="getAllCompletedRecRecordsRequest">
 
-      <wsdl:operation name="getAllRecievedRecords">
+      <wsdl:part element="impl:getAllCompletedRecRecords" name="parameters">
 
-         <wsdl:input message="impl:getAllRecievedRecordsRequest" name="getAllRecievedRecordsRequest">
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GetAllCompletedRecRecords">
+
+      <wsdl:operation name="getAllCompletedRecRecords">
+
+         <wsdl:input message="impl:getAllCompletedRecRecordsRequest" name="getAllCompletedRecRecordsRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getAllRecievedRecordsResponse" name="getAllRecievedRecordsResponse">
+         <wsdl:output message="impl:getAllCompletedRecRecordsResponse" name="getAllCompletedRecRecordsResponse">
 
        </wsdl:output>
 
@@ -62,21 +62,21 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-   <wsdl:binding name="GetAllRecievedRecordsSoapBinding" type="impl:GetAllRecievedRecords">
+   <wsdl:binding name="GetAllCompletedRecRecordsSoapBinding" type="impl:GetAllCompletedRecRecords">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="getAllRecievedRecords">
+      <wsdl:operation name="getAllCompletedRecRecords">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getAllRecievedRecordsRequest">
+         <wsdl:input name="getAllCompletedRecRecordsRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getAllRecievedRecordsResponse">
+         <wsdl:output name="getAllCompletedRecRecordsResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -86,11 +86,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-   <wsdl:service name="GetAllRecievedRecordsService">
+   <wsdl:service name="GetAllCompletedRecRecordsService">
 
-      <wsdl:port binding="impl:GetAllRecievedRecordsSoapBinding" name="GetAllRecievedRecords">
+      <wsdl:port binding="impl:GetAllCompletedRecRecordsSoapBinding" name="GetAllCompletedRecRecords">
 
-         <wsdlsoap:address location="http://localhost:8080/paper/services/GetAllRecievedRecords"/>
+         <wsdlsoap:address location="http://localhost:8080/paper/services/GetAllCompletedRecRecords"/>
 
       </wsdl:port>
 

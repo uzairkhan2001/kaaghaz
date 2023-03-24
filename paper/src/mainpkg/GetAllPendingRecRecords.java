@@ -5,16 +5,16 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class GetAllRecievedRecords {
+public class GetAllPendingRecRecords {
 	Received[] data = null;
 
-	public Received[] getAllRecievedRecords() {
+	public Received[] getAllPendingRecRecords() {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT purchaseorder.ID, rawmaterialtype.RawMaterialName, size.Size, weight.Weight, vendor.Name, purchaseorder.Quantity, SUM(recieveorder.`Receive Intact`) AS `Received Intact`,SUM(recieveorder.`Receive Damage`) AS `Received Damaged`, purchaseorder.Time , purchaseorder.Time FROM size, vendor, weight, rawmaterialtype, purchaseorder LEFT JOIN recieveorder ON purchaseorder.ID= recieveorder.`Purchase ID` WHERE size.id = purchaseorder.SizeID AND weight.id = purchaseorder.WeightID AND vendor.ID = purchaseorder.VendorID AND rawmaterialtype.RawMaterialId = purchaseorder.rawmaterial_ID GROUP BY purchaseorder.ID;");
+			ResultSet rs = stmt.executeQuery("SELECT purchaseorder.ID, rawmaterialtype.RawMaterialName, size.Size, weight.Weight, vendor.Name, purchaseorder.Quantity, SUM(recieveorder.`Receive Intact`) AS `Received Intact`,SUM(recieveorder.`Receive Damage`) AS `Received Damaged`, purchaseorder.Time FROM size, vendor, weight, rawmaterialtype, purchaseorder LEFT JOIN recieveorder ON purchaseorder.ID= recieveorder.`Purchase ID` WHERE size.id = purchaseorder.SizeID AND weight.id = purchaseorder.WeightID AND vendor.ID = purchaseorder.VendorID AND rawmaterialtype.RawMaterialId = purchaseorder.rawmaterial_ID GROUP BY purchaseorder.ID HAVING purchaseorder.Quantity > SUM(recieveorder.`Receive Intact`) + SUM(recieveorder.`Receive Damage`);");
 
 			rs.last();
 			
