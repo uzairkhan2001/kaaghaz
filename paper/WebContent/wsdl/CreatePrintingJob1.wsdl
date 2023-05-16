@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="createPrintingJob1">
+    <complexType>
+     <sequence>
+      <element name="category" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createPrintingJob1Response">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="createPrintingJob1Return" type="impl:CreatePrintingJob"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="CreatePrintingJob">
+    <sequence>
+     <element name="purchaseId" type="xsd:int"/>
+     <element name="raw" nillable="true" type="xsd:string"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="Quan_available" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="createPrintingJob1Request">
+
+      <wsdl:part element="impl:createPrintingJob1" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createPrintingJob1Response">
+
+      <wsdl:part element="impl:createPrintingJob1Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CreatePrintingJob1">
+
+      <wsdl:operation name="createPrintingJob1">
+
+         <wsdl:input message="impl:createPrintingJob1Request" name="createPrintingJob1Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createPrintingJob1Response" name="createPrintingJob1Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CreatePrintingJob1SoapBinding" type="impl:CreatePrintingJob1">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createPrintingJob1">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createPrintingJob1Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createPrintingJob1Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CreatePrintingJob1Service">
+
+      <wsdl:port binding="impl:CreatePrintingJob1SoapBinding" name="CreatePrintingJob1">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/CreatePrintingJob1"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

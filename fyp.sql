@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2023 at 06:49 PM
+-- Generation Time: May 16, 2023 at 09:00 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `fyp`
 --
+CREATE DATABASE IF NOT EXISTS `fyp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `fyp`;
 
 -- --------------------------------------------------------
 
@@ -150,9 +152,12 @@ INSERT INTO `purchaseorder` (`ID`, `rawmaterial_ID`, `SizeID`, `WeightID`, `Vend
 (21, 1, 1, 2, 3, 100, '2023-01-02 18:04:04'),
 (22, 2, 3, 2, 1, 100, '2023-01-02 18:04:46'),
 (23, 3, 1, 3, 4, 2000, '2023-01-02 18:11:23'),
-(24, 2, 3, 2, 3, 35000, '2023-01-22 18:51:55'),
 (25, 1, 2, 2, 3, 999, '2023-01-23 05:43:02'),
-(26, 1, 2, 5, 4, 350, '2023-01-23 07:01:04');
+(26, 1, 2, 5, 4, 350, '2023-01-23 07:01:04'),
+(27, 1, 2, 5, 4, 50, '2023-03-15 06:05:34'),
+(28, 1, 2, 5, 4, 422, '2023-03-24 10:16:32'),
+(29, 1, 5, 6, 1, 9876, '2023-03-29 15:27:09'),
+(30, 3, 5, 4, 2, 555, '2023-03-30 14:53:31');
 
 -- --------------------------------------------------------
 
@@ -192,11 +197,10 @@ CREATE TABLE `receiveprinting` (
 --
 
 INSERT INTO `receiveprinting` (`ID`, `printID`, `receivequan`, `time`) VALUES
-(1, 3, 0, '2023-02-20 17:34:40.712285'),
-(2, 5, 0, '2023-02-20 17:34:58.530232'),
-(3, 25, 0, '2023-02-20 17:35:13.279701'),
-(4, 26, 0, '2023-02-20 17:35:25.877020'),
-(5, 25, 0, '2023-02-20 17:35:38.066924');
+(7, 3, 0, '2023-05-15 06:41:34.000000'),
+(8, 4, 0, '2023-05-15 08:02:48.000000'),
+(9, 5, 0, '2023-05-15 08:03:06.000000'),
+(10, 22, 0, '2023-05-15 19:25:49.000000');
 
 -- --------------------------------------------------------
 
@@ -224,7 +228,6 @@ INSERT INTO `recieveorder` (`ID`, `Purchase ID`, `Receive Intact`, `Receive Dama
 (27, 3, 0, 4, '2022-10-04 18:33:50'),
 (28, 1, 4, 3, '2022-10-04 18:34:00'),
 (29, 2, 5, 4, '2022-10-05 04:49:45'),
-(30, 0, 0, 0, '2022-10-05 09:45:00'),
 (31, 3, 5, 1, '2022-10-05 18:02:18'),
 (32, 4, 250, 150, '2022-10-05 18:07:36'),
 (33, 4, 984, 300, '2022-10-05 18:12:11'),
@@ -240,38 +243,6 @@ INSERT INTO `recieveorder` (`ID`, `Purchase ID`, `Receive Intact`, `Receive Dama
 (43, 2, 221, 0, '2022-10-07 12:51:34'),
 (44, 2, 5, 4, '2022-10-08 11:19:33'),
 (45, 5, 100, 101, '2022-10-09 17:53:54'),
-(46, 0, 0, 0, '2022-10-09 17:54:35'),
-(47, 0, 0, 0, '2022-10-09 17:59:11'),
-(48, 0, 0, 0, '2022-10-09 17:59:11'),
-(49, 0, 0, 0, '2022-10-09 17:59:12'),
-(50, 0, 0, 0, '2022-10-09 17:59:13'),
-(51, 0, 0, 0, '2022-10-09 17:59:14'),
-(52, 0, 0, 0, '2022-10-09 17:59:15'),
-(53, 0, 0, 0, '2022-10-09 17:59:15'),
-(54, 0, 0, 0, '2022-10-09 17:59:16'),
-(55, 0, 0, 0, '2022-10-10 03:57:48'),
-(56, 0, 0, 0, '2022-10-10 03:57:49'),
-(57, 0, 0, 0, '2022-10-10 03:57:50'),
-(58, 0, 0, 0, '2022-10-10 03:57:50'),
-(59, 0, 0, 0, '2022-10-10 03:58:00'),
-(60, 0, 0, 0, '2022-10-10 03:58:01'),
-(61, 0, 0, 0, '2022-10-10 03:59:03'),
-(62, 0, 0, 0, '2022-10-10 03:59:03'),
-(63, 0, 0, 0, '2022-10-10 03:59:04'),
-(64, 0, 0, 0, '2022-10-10 03:59:05'),
-(65, 0, 0, 0, '2022-10-10 03:59:05'),
-(66, 0, 0, 0, '2022-10-10 04:13:56'),
-(67, 0, 0, 0, '2022-10-10 04:13:56'),
-(68, 0, 0, 0, '2022-10-10 04:13:57'),
-(69, 0, 0, 0, '2022-10-10 04:13:58'),
-(70, 0, 0, 0, '2022-10-10 04:13:58'),
-(71, 0, 0, 0, '2022-10-10 04:14:24'),
-(72, 0, 0, 0, '2022-10-10 04:14:25'),
-(73, 0, 0, 0, '2022-10-10 04:14:25'),
-(74, 0, 0, 0, '2022-10-10 04:14:26'),
-(75, 0, 0, 0, '2022-10-10 04:14:27'),
-(76, 0, 0, 0, '2022-10-10 04:24:51'),
-(77, 0, 0, 0, '2022-10-10 04:47:31'),
 (78, 5, 0, 0, '2022-10-10 04:48:51'),
 (79, 2, 5, 4, '2022-10-10 04:54:09'),
 (80, 1, 4, 3, '2022-10-10 10:14:30'),
@@ -319,7 +290,19 @@ INSERT INTO `recieveorder` (`ID`, `Purchase ID`, `Receive Intact`, `Receive Dama
 (122, 2, 5, 4, '2023-01-23 07:01:04'),
 (123, 17, 4323, 0, '2023-01-23 07:02:24'),
 (124, 26, 250, 10, '2023-01-23 07:03:17'),
-(125, 26, 90, 0, '2023-01-23 07:04:06');
+(125, 26, 90, 0, '2023-01-23 07:04:06'),
+(126, 24, 5000, 5, '2023-03-15 05:31:10'),
+(127, 23, 50, 10, '2023-03-15 05:55:31'),
+(128, 22, 3, 2, '2023-03-15 05:58:02'),
+(129, 22, 3, 2, '2023-03-15 05:58:54'),
+(130, 22, 3, 2, '2023-03-15 06:00:58'),
+(131, 22, 3, 2, '2023-03-15 06:04:02'),
+(132, 22, 3, 2, '2023-03-15 06:04:14'),
+(133, 2, 5, 4, '2023-03-15 06:05:34'),
+(134, 27, 3, 4, '2023-03-21 14:46:33'),
+(135, 2, 5, 4, '2023-03-24 10:16:32'),
+(136, 5, 6, 1, '2023-03-29 15:27:09'),
+(137, 5, 4, 2, '2023-03-30 14:53:31');
 
 -- --------------------------------------------------------
 
@@ -330,8 +313,9 @@ INSERT INTO `recieveorder` (`ID`, `Purchase ID`, `Receive Intact`, `Receive Dama
 CREATE TABLE `sendforprinting` (
   `ID` int(40) NOT NULL,
   `PID` int(40) NOT NULL,
-  `printVendor` varchar(40) NOT NULL,
+  `printVendor` int(40) NOT NULL,
   `quantity` int(40) NOT NULL,
+  `ReceiveFromPrinting` int(11) NOT NULL,
   `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -339,12 +323,11 @@ CREATE TABLE `sendforprinting` (
 -- Dumping data for table `sendforprinting`
 --
 
-INSERT INTO `sendforprinting` (`ID`, `PID`, `printVendor`, `quantity`, `time`) VALUES
-(1, 3, '2', 1234, '2023-02-20 17:51:40.897454'),
-(2, 5, '4', 4321, '2023-02-20 17:52:20.429984'),
-(3, 25, '1', 2, '2023-02-20 17:52:20.456468'),
-(4, 26, '3', 90, '2023-02-20 17:52:20.473386'),
-(5, 25, '2', 1234567, '2023-02-20 17:52:20.490427');
+INSERT INTO `sendforprinting` (`ID`, `PID`, `printVendor`, `quantity`, `ReceiveFromPrinting`, `time`) VALUES
+(1, 3, 1, 10, 0, '2023-05-15 06:41:34.000000'),
+(2, 4, 1, 50, 0, '2023-05-15 08:02:48.000000'),
+(3, 5, 1, 10, 0, '2023-05-15 08:03:06.000000'),
+(4, 22, 4, 2, 0, '2023-05-15 19:25:50.000000');
 
 -- --------------------------------------------------------
 
@@ -465,7 +448,9 @@ ALTER TABLE `recieveorder`
 -- Indexes for table `sendforprinting`
 --
 ALTER TABLE `sendforprinting`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `PID` (`PID`),
+  ADD KEY `printVendor` (`printVendor`);
 
 --
 -- Indexes for table `size`
@@ -511,7 +496,7 @@ ALTER TABLE `printingvendor`
 -- AUTO_INCREMENT for table `purchaseorder`
 --
 ALTER TABLE `purchaseorder`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `rawmaterialtype`
@@ -523,19 +508,19 @@ ALTER TABLE `rawmaterialtype`
 -- AUTO_INCREMENT for table `receiveprinting`
 --
 ALTER TABLE `receiveprinting`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `recieveorder`
 --
 ALTER TABLE `recieveorder`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
 
 --
 -- AUTO_INCREMENT for table `sendforprinting`
 --
 ALTER TABLE `sendforprinting`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `size`
@@ -554,6 +539,17 @@ ALTER TABLE `vendor`
 --
 ALTER TABLE `weight`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `sendforprinting`
+--
+ALTER TABLE `sendforprinting`
+  ADD CONSTRAINT `sendforprinting_ibfk_1` FOREIGN KEY (`PID`) REFERENCES `purchaseorder` (`ID`),
+  ADD CONSTRAINT `sendforprinting_ibfk_2` FOREIGN KEY (`printVendor`) REFERENCES `printingvendor` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
