@@ -121,19 +121,6 @@
   <ns1:parameter name="sendXsiTypes" value="false"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns10:Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Record" xmlns:ns10="http://mainpkg"/>
  </ns1:service>
- <ns1:service name="GetAllWeights" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllweight" qname="ns11:getAllweight" returnQName="ns11:getAllweightReturn" returnType="xsd:int" soapAction="" xmlns:ns11="http://mainpkg" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns11:SizeID" type="xsd:int"/>
-  </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="getAllweight"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="wsdlPortType" value="GetAllWeights"/>
-  <ns1:parameter name="className" value="mainpkg.GetAllWeights"/>
-  <ns1:parameter name="wsdlServicePort" value="GetAllWeights"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServiceElement" value="GetAllWeightsService"/>
- </ns1:service>
  <ns1:service name="Version" provider="java:RPC">
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
@@ -198,16 +185,14 @@
   <ns1:operation name="getAllweight" qname="ns20:getAllweight" returnQName="ns20:getAllweightReturn" returnType="ns20:Record" soapAction="" xmlns:ns20="http://mainpkg">
    <ns1:parameter qname="ns20:SizeID" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:parameter name="sendMultiRefs" value="false"/>
+  <ns1:parameter name="allowedMethods" value="getAllweight"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="GetAllWeight"/>
+  <ns1:parameter name="className" value="mainpkg.GetAllWeight"/>
   <ns1:parameter name="wsdlServicePort" value="GetAllWeight"/>
   <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="className" value="mainpkg.GetAllWeight"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="allowedMethods" value="getAllweight"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="GetAllWeightService"/>
-  <ns1:parameter name="wsdlPortType" value="GetAllWeight"/>
-  <ns1:parameter name="sendXsiTypes" value="false"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns21:Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Record" xmlns:ns21="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="POReportView" provider="java:RPC" style="wrapped" use="literal">
