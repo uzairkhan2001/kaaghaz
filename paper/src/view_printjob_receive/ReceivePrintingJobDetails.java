@@ -1,36 +1,36 @@
-package mainpkg;
+package view_printjob_receive;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class ROReportByPidView {
-	ROReportByPid[] data = null;
+public class ReceivePrintingJobDetails {
+	
+	ReceivePrintingJobDetailsIni[] data = null;
 
-	public ROReportByPid[] reportbypid(int pid) {
+	public ReceivePrintingJobDetailsIni[] receivePrintingJobDetails(int pjid) {
 
 		try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT ID,`Receive Intact`,`Receive Damage`,Time FROM `recieveorder` WHERE `Purchase ID` = "+ pid);
+			ResultSet rs = stmt.executeQuery("SELECT ID,receivequan,time FROM `receiveprinting` WHERE printID="+pjid);
 
 			rs.last();
 
 
 			
-			data = new ROReportByPid[rs.getRow()];
+			data = new ReceivePrintingJobDetailsIni[rs.getRow()];
 			rs.beforeFirst();
 			int i = 0;
 			while (rs.next()) {
 				
-				data[i] = new ROReportByPid();
+				data[i] = new ReceivePrintingJobDetailsIni();
 				data[i].recOrdId = rs.getInt(1);
-				data[i].receiveIntact = rs.getInt(2);
-				data[i].receiveDamage = rs.getInt(3);
-				data[i].time = rs.getString(4);
+				data[i].receiveQuantity = rs.getInt(2);
+				data[i].time = rs.getString(3);
 
 				i++;
 			}

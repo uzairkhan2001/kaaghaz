@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://view_printjob_receive" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://view_printjob_receive" xmlns:intf="http://view_printjob_receive" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://view_printjob_receive" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="receivePrintingJobDetails">
+    <complexType>
+     <sequence>
+      <element name="pjid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="receivePrintingJobDetailsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="receivePrintingJobDetailsReturn" type="impl:ReceivePrintingJobDetailsIni"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ReceivePrintingJobDetailsIni">
+    <sequence>
+     <element name="recOrdId" type="xsd:int"/>
+     <element name="receiveQuantity" type="xsd:int"/>
+     <element name="time" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="receivePrintingJobDetailsRequest">
+
+      <wsdl:part element="impl:receivePrintingJobDetails" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="receivePrintingJobDetailsResponse">
+
+      <wsdl:part element="impl:receivePrintingJobDetailsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ReceivePrintingJobDetails">
+
+      <wsdl:operation name="receivePrintingJobDetails">
+
+         <wsdl:input message="impl:receivePrintingJobDetailsRequest" name="receivePrintingJobDetailsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:receivePrintingJobDetailsResponse" name="receivePrintingJobDetailsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ReceivePrintingJobDetailsSoapBinding" type="impl:ReceivePrintingJobDetails">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="receivePrintingJobDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="receivePrintingJobDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="receivePrintingJobDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ReceivePrintingJobDetailsService">
+
+      <wsdl:port binding="impl:ReceivePrintingJobDetailsSoapBinding" name="ReceivePrintingJobDetails">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/ReceivePrintingJobDetails"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
