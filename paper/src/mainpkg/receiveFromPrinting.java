@@ -10,7 +10,7 @@ public class receiveFromPrinting {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp","root","");
 				Statement stmt=con.createStatement();
-				stmt.executeUpdate("INSERT INTO `receiveprinting`(`printID`, `receivequan`,`Time`) VALUES ("+printID+",0,now())");
+				stmt.executeUpdate("INSERT INTO `receiveprinting`(`printID`, `receivequan`,`Time`) VALUES ("+printID+","+receive+",now())");
 				con.close();
 				return "Insert Successfully!";
 			} catch (Exception e) {
