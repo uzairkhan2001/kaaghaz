@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from receiveFromPrintingService WSDL service -->
+  <!-- Services from CreatePrintingJobService WSDL service -->
 
-  <service name="receiveFromPrinting"/>
+  <service name="CreatePrintingJob"/>
 </undeployment>

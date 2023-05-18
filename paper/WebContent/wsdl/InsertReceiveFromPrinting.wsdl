@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://manage_printing_job" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://manage_printing_job" xmlns:intf="http://manage_printing_job" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://manage_printing_job" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="insertReceiveFromPrinting">
+    <complexType>
+     <sequence>
+      <element name="printID" type="xsd:int"/>
+      <element name="receive" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertReceiveFromPrintingResponse">
+    <complexType>
+     <sequence>
+      <element name="insertReceiveFromPrintingReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insertReceiveFromPrintingResponse">
+
+      <wsdl:part element="impl:insertReceiveFromPrintingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertReceiveFromPrintingRequest">
+
+      <wsdl:part element="impl:insertReceiveFromPrinting" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="InsertReceiveFromPrinting">
+
+      <wsdl:operation name="insertReceiveFromPrinting">
+
+         <wsdl:input message="impl:insertReceiveFromPrintingRequest" name="insertReceiveFromPrintingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertReceiveFromPrintingResponse" name="insertReceiveFromPrintingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="InsertReceiveFromPrintingSoapBinding" type="impl:InsertReceiveFromPrinting">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="insertReceiveFromPrinting">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertReceiveFromPrintingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertReceiveFromPrintingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="InsertReceiveFromPrintingService">
+
+      <wsdl:port binding="impl:InsertReceiveFromPrintingSoapBinding" name="InsertReceiveFromPrinting">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/InsertReceiveFromPrinting"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

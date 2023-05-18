@@ -1,4 +1,4 @@
-package mainpkg;
+package view_printjob_receive;
 
 public class GetPrintingJobSummaryIni {
 	

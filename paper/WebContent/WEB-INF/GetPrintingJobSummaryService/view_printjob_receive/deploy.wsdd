@@ -3,18 +3,18 @@
   <!-- Services from GetPrintingJobSummaryService WSDL service -->
 
   <service name="GetPrintingJobSummary" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
+      <parameter name="wsdlTargetNamespace" value="http://view_printjob_receive"/>
       <parameter name="wsdlServiceElement" value="GetPrintingJobSummaryService"/>
-      <parameter name="schemaQualified" value="http://mainpkg"/>
+      <parameter name="schemaQualified" value="http://view_printjob_receive"/>
       <parameter name="wsdlServicePort" value="GetPrintingJobSummary"/>
-      <parameter name="className" value="mainpkg.GetPrintingJobSummary"/>
+      <parameter name="className" value="view_printjob_receive.GetPrintingJobSummary"/>
       <parameter name="wsdlPortType" value="GetPrintingJobSummary"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://mainpkg" xmlns:retNS="http://mainpkg" xmlns:rtns="http://mainpkg" name="getPrintingJobSummary" qname="operNS:getPrintingJobSummary" returnQName="retNS:getPrintingJobSummaryReturn" returnType="rtns:GetPrintingJobSummaryIni" soapAction="">
-        <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pjid" type="tns:int"/>
+      <operation xmlns:operNS="http://view_printjob_receive" xmlns:retNS="http://view_printjob_receive" xmlns:rtns="http://view_printjob_receive" name="getPrintingJobSummary" qname="operNS:getPrintingJobSummary" returnQName="retNS:getPrintingJobSummaryReturn" returnType="rtns:GetPrintingJobSummaryIni" soapAction="">
+        <parameter xmlns:pns="http://view_printjob_receive" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pjid" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="getPrintingJobSummary"/>
 
-      <typeMapping xmlns:ns="http://mainpkg" qname="ns:GetPrintingJobSummaryIni" type="java:mainpkg.GetPrintingJobSummaryIni" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://view_printjob_receive" qname="ns:GetPrintingJobSummaryIni" type="java:view_printjob_receive.GetPrintingJobSummaryIni" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
 </deployment>

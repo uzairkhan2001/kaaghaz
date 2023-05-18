@@ -1,4 +1,4 @@
-package mainpkg;
+package create_printing_job;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class GetAllPrintVendors {
-	Record[] data = null;
+	GetAllPrintVendorsIni[] data = null;
 
-	public Record[] getAllPrintVendor() {
+	public GetAllPrintVendorsIni[] getAllPrintVendor() {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -20,12 +20,12 @@ public class GetAllPrintVendors {
 
 
 			
-			data = new Record[rs.getRow()];
+			data = new GetAllPrintVendorsIni[rs.getRow()];
 			rs.beforeFirst();
 			int i = 0;
 			while (rs.next()) {
 				
-				data[i] = new Record();
+				data[i] = new GetAllPrintVendorsIni();
 				data[i].id = rs.getInt(1);
 				data[i].name = rs.getString(2);
 

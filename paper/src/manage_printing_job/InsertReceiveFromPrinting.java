@@ -1,11 +1,11 @@
-package mainpkg;
+package manage_printing_job;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-public class receiveFromPrinting {
-		public String insertRecieveOrder(int printID, int receive) {
+public class InsertReceiveFromPrinting {
+		public String insertReceiveFromPrinting(int printID, int receive) {
 	    	try {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp","root","");
@@ -16,7 +16,6 @@ public class receiveFromPrinting {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
 			return "Not Insert Successfull";
 	    }
 	}

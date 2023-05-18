@@ -58,11 +58,23 @@
   <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
   <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
  </ns1:service>
+ <ns1:service name="GetPOreport" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="getAllPurchaseOrder" qname="ns5:getAllPurchaseOrder" returnQName="ns5:getAllPurchaseOrderReturn" returnType="ns5:PurchaseOrderRRepo" soapAction="" xmlns:ns5="http://mainpkg"/>
+  <ns1:parameter name="allowedMethods" value="getAllPurchaseOrder"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="GetPOreport"/>
+  <ns1:parameter name="className" value="mainpkg.GetPOreport"/>
+  <ns1:parameter name="wsdlServicePort" value="GetPOreport"/>
+  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
+  <ns1:parameter name="wsdlServiceElement" value="GetPOreportService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:PurchaseOrderRRepo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.PurchaseOrderRRepo" xmlns:ns6="http://mainpkg"/>
+ </ns1:service>
  <ns1:service name="Recieveorder" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="insertRecieveOrder" qname="ns5:insertRecieveOrder" returnQName="ns5:insertRecieveOrderReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://mainpkg" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns5:purchaseID" type="xsd:int"/>
-   <ns1:parameter qname="ns5:intact" type="xsd:int"/>
-   <ns1:parameter qname="ns5:damage" type="xsd:int"/>
+  <ns1:operation name="insertRecieveOrder" qname="ns7:insertRecieveOrder" returnQName="ns7:insertRecieveOrderReturn" returnType="xsd:string" soapAction="" xmlns:ns7="http://mainpkg" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:purchaseID" type="xsd:int"/>
+   <ns1:parameter qname="ns7:intact" type="xsd:int"/>
+   <ns1:parameter qname="ns7:damage" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="insertRecieveOrder"/>
   <ns1:parameter name="wsdlPortType" value="Recieveorder"/>
@@ -72,18 +84,6 @@
   <ns1:parameter name="className" value="mainpkg.Recieveorder"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="RecieveorderService"/>
- </ns1:service>
- <ns1:service name="GetPOreport" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllPurchaseOrder" qname="ns6:getAllPurchaseOrder" returnQName="ns6:getAllPurchaseOrderReturn" returnType="ns6:PurchaseOrderRRepo" soapAction="" xmlns:ns6="http://mainpkg"/>
-  <ns1:parameter name="allowedMethods" value="getAllPurchaseOrder"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="wsdlPortType" value="GetPOreport"/>
-  <ns1:parameter name="className" value="mainpkg.GetPOreport"/>
-  <ns1:parameter name="wsdlServicePort" value="GetPOreport"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServiceElement" value="GetPOreportService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns7:PurchaseOrderRRepo" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.PurchaseOrderRRepo" xmlns:ns7="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="GetQuantity" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="getQuantity" qname="ns8:getQuantity" returnQName="ns8:getQuantityReturn" returnType="xsd:int" soapAction="" xmlns:ns8="http://mainpkg" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -108,40 +108,38 @@
   <ns1:parameter name="wsdlServiceElement" value="QuantService"/>
  </ns1:service>
  <ns1:service name="GetAllPrintVendors" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllPrintVendor" qname="ns9:getAllPrintVendor" returnQName="ns9:getAllPrintVendorReturn" returnType="ns9:Record" soapAction="" xmlns:ns9="http://mainpkg"/>
-  <ns1:parameter name="sendMultiRefs" value="false"/>
-  <ns1:parameter name="wsdlServicePort" value="GetAllPrintVendors"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="className" value="mainpkg.GetAllPrintVendors"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:operation name="getAllPrintVendor" qname="ns9:getAllPrintVendor" returnQName="ns9:getAllPrintVendorReturn" returnType="ns9:GetAllPrintVendorsIni" soapAction="" xmlns:ns9="http://create_printing_job"/>
   <ns1:parameter name="allowedMethods" value="getAllPrintVendor"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="GetAllPrintVendors"/>
+  <ns1:parameter name="className" value="create_printing_job.GetAllPrintVendors"/>
+  <ns1:parameter name="wsdlServicePort" value="GetAllPrintVendors"/>
+  <ns1:parameter name="schemaQualified" value="http://create_printing_job"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://create_printing_job"/>
   <ns1:parameter name="wsdlServiceElement" value="GetAllPrintVendorsService"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
-  <ns1:parameter name="sendXsiTypes" value="false"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns10:Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Record" xmlns:ns10="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns10:GetAllPrintVendorsIni" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:create_printing_job.GetAllPrintVendorsIni" xmlns:ns10="http://create_printing_job"/>
  </ns1:service>
  <ns1:service name="Version" provider="java:RPC">
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
- <ns1:service name="CreatePrintingJob1" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="createPrintingJob1" qname="ns11:createPrintingJob1" returnQName="ns11:createPrintingJob1Return" returnType="ns11:CreatePrintingJob" soapAction="" xmlns:ns11="http://mainpkg">
-   <ns1:parameter qname="ns11:category" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+ <ns1:service name="CreatePrintingJob" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="createPrintingJob" qname="ns12:createPrintingJob" returnQName="ns12:createPrintingJobReturn" returnType="ns12:CreatePrintingJobIni" soapAction="" xmlns:ns12="http://create_printing_job">
+   <ns1:parameter qname="ns12:category" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="createPrintingJob1"/>
-  <ns1:parameter name="wsdlPortType" value="CreatePrintingJob1"/>
+  <ns1:parameter name="allowedMethods" value="createPrintingJob"/>
+  <ns1:parameter name="wsdlPortType" value="CreatePrintingJob"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServicePort" value="CreatePrintingJob1"/>
-  <ns1:parameter name="className" value="mainpkg.CreatePrintingJob1"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServiceElement" value="CreatePrintingJob1Service"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns12:CreatePrintingJob" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.CreatePrintingJob" xmlns:ns12="http://mainpkg"/>
+  <ns1:parameter name="schemaQualified" value="http://create_printing_job"/>
+  <ns1:parameter name="wsdlServicePort" value="CreatePrintingJob"/>
+  <ns1:parameter name="className" value="create_printing_job.CreatePrintingJob"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://create_printing_job"/>
+  <ns1:parameter name="wsdlServiceElement" value="CreatePrintingJobService"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns13:CreatePrintingJobIni" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:create_printing_job.CreatePrintingJobIni" xmlns:ns13="http://create_printing_job"/>
  </ns1:service>
  <ns1:service name="GetSummaryOfRawMaterial" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getSummaryOfRawMaterial" qname="ns13:getSummaryOfRawMaterial" returnQName="ns13:getSummaryOfRawMaterialReturn" returnType="ns13:Summary" soapAction="" xmlns:ns13="http://mainpkg">
-   <ns1:parameter qname="ns13:raw" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getSummaryOfRawMaterial" qname="ns14:getSummaryOfRawMaterial" returnQName="ns14:getSummaryOfRawMaterialReturn" returnType="ns14:Summary" soapAction="" xmlns:ns14="http://mainpkg">
+   <ns1:parameter qname="ns14:raw" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getSummaryOfRawMaterial"/>
   <ns1:parameter name="wsdlPortType" value="GetSummaryOfRawMaterial"/>
@@ -151,24 +149,24 @@
   <ns1:parameter name="className" value="mainpkg.GetSummaryOfRawMaterial"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="GetSummaryOfRawMaterialService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns14:Summary" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Summary" xmlns:ns14="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns15:Summary" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Summary" xmlns:ns15="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="ManagePrintingJob" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="managePrintingJob" qname="ns15:managePrintingJob" returnQName="ns15:managePrintingJobReturn" returnType="ns15:ManagePrintingJobInitial" soapAction="" xmlns:ns15="http://mainpkg">
-   <ns1:parameter qname="ns15:category" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="managePrintingJob" qname="ns16:managePrintingJob" returnQName="ns16:managePrintingJobReturn" returnType="ns16:ManagePrintingJobInitial" soapAction="" xmlns:ns16="http://manage_printing_job">
+   <ns1:parameter qname="ns16:category" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="managePrintingJob"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="ManagePrintingJob"/>
-  <ns1:parameter name="className" value="mainpkg.ManagePrintingJob"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://manage_printing_job"/>
   <ns1:parameter name="wsdlServicePort" value="ManagePrintingJob"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
+  <ns1:parameter name="className" value="manage_printing_job.ManagePrintingJob"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://manage_printing_job"/>
   <ns1:parameter name="wsdlServiceElement" value="ManagePrintingJobService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns16:ManagePrintingJobInitial" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.ManagePrintingJobInitial" xmlns:ns16="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns17:ManagePrintingJobInitial" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:manage_printing_job.ManagePrintingJobInitial" xmlns:ns17="http://manage_printing_job"/>
  </ns1:service>
  <ns1:service name="GetAllRecievedRecords" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllRecievedRecords" qname="ns17:getAllRecievedRecords" returnQName="ns17:getAllRecievedRecordsReturn" returnType="ns17:Received" soapAction="" xmlns:ns17="http://mainpkg"/>
+  <ns1:operation name="getAllRecievedRecords" qname="ns18:getAllRecievedRecords" returnQName="ns18:getAllRecievedRecordsReturn" returnType="ns18:Received" soapAction="" xmlns:ns18="http://mainpkg"/>
   <ns1:parameter name="sendMultiRefs" value="false"/>
   <ns1:parameter name="wsdlServicePort" value="GetAllRecievedRecords"/>
   <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
@@ -179,11 +177,11 @@
   <ns1:parameter name="wsdlServiceElement" value="GetAllRecievedRecordsService"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="sendXsiTypes" value="false"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns18:Received" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Received" xmlns:ns18="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns19:Received" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Received" xmlns:ns19="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="GetAllWeight" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllweight" qname="ns19:getAllweight" returnQName="ns19:getAllweightReturn" returnType="ns19:Record" soapAction="" xmlns:ns19="http://mainpkg">
-   <ns1:parameter qname="ns19:SizeID" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getAllweight" qname="ns20:getAllweight" returnQName="ns20:getAllweightReturn" returnType="ns20:Record" soapAction="" xmlns:ns20="http://mainpkg">
+   <ns1:parameter qname="ns20:SizeID" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="sendMultiRefs" value="false"/>
   <ns1:parameter name="wsdlServicePort" value="GetAllWeight"/>
@@ -195,10 +193,10 @@
   <ns1:parameter name="wsdlServiceElement" value="GetAllWeightService"/>
   <ns1:parameter name="wsdlPortType" value="GetAllWeight"/>
   <ns1:parameter name="sendXsiTypes" value="false"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns20:Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Record" xmlns:ns20="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns21:Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Record" xmlns:ns21="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="POReportView" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="report" qname="ns21:report" returnQName="ns21:reportReturn" returnType="ns21:ReportPO" soapAction="" xmlns:ns21="http://mainpkg"/>
+  <ns1:operation name="report" qname="ns22:report" returnQName="ns22:reportReturn" returnType="ns22:ReportPO" soapAction="" xmlns:ns22="http://mainpkg"/>
   <ns1:parameter name="allowedMethods" value="report"/>
   <ns1:parameter name="wsdlPortType" value="POReportView"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
@@ -207,12 +205,12 @@
   <ns1:parameter name="className" value="mainpkg.POReportView"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="POReportViewService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns22:ReportPO" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.ReportPO" xmlns:ns22="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns23:ReportPO" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.ReportPO" xmlns:ns23="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="GetAllVendors" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllVendor" qname="ns23:getAllVendor" returnQName="ns23:getAllVendorReturn" returnType="ns23:Record" soapAction="" xmlns:ns23="http://mainpkg">
-   <ns1:parameter qname="ns23:SizeID" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-   <ns1:parameter qname="ns23:WeightID" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getAllVendor" qname="ns24:getAllVendor" returnQName="ns24:getAllVendorReturn" returnType="ns24:Record" soapAction="" xmlns:ns24="http://mainpkg">
+   <ns1:parameter qname="ns24:SizeID" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns24:WeightID" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="sendMultiRefs" value="false"/>
   <ns1:parameter name="wsdlServicePort" value="GetAllVendors"/>
@@ -224,11 +222,11 @@
   <ns1:parameter name="wsdlServiceElement" value="GetAllVendorsService"/>
   <ns1:parameter name="wsdlPortType" value="GetAllVendors"/>
   <ns1:parameter name="sendXsiTypes" value="false"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns24:Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Record" xmlns:ns24="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns25:Record" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Record" xmlns:ns25="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="receiveSummary" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllRecievedSummary" qname="ns25:getAllRecievedSummary" returnQName="ns25:getAllRecievedSummaryReturn" returnType="ns25:Received" soapAction="" xmlns:ns25="http://mainpkg">
-   <ns1:parameter qname="ns25:pid" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getAllRecievedSummary" qname="ns26:getAllRecievedSummary" returnQName="ns26:getAllRecievedSummaryReturn" returnType="ns26:Received" soapAction="" xmlns:ns26="http://mainpkg">
+   <ns1:parameter qname="ns26:pid" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getAllRecievedSummary"/>
   <ns1:parameter name="wsdlPortType" value="receiveSummary"/>
@@ -238,11 +236,11 @@
   <ns1:parameter name="className" value="mainpkg.receiveSummary"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="receiveSummaryService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns26:Received" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Received" xmlns:ns26="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns27:Received" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Received" xmlns:ns27="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="ROReportByPidView" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="reportbypid" qname="ns27:reportbypid" returnQName="ns27:reportbypidReturn" returnType="ns27:ROReportByPid" soapAction="" xmlns:ns27="http://mainpkg">
-   <ns1:parameter qname="ns27:pid" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="reportbypid" qname="ns28:reportbypid" returnQName="ns28:reportbypidReturn" returnType="ns28:ROReportByPid" soapAction="" xmlns:ns28="http://mainpkg">
+   <ns1:parameter qname="ns28:pid" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="reportbypid"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
@@ -252,25 +250,25 @@
   <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="ROReportByPidViewService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns28:ROReportByPid" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.ROReportByPid" xmlns:ns28="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns29:ROReportByPid" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.ROReportByPid" xmlns:ns29="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="SendForPrintingJob" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="sendPrintingJob" qname="ns29:sendPrintingJob" returnQName="ns29:sendPrintingJobReturn" returnType="xsd:string" soapAction="" xmlns:ns29="http://mainpkg" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns29:purchaseID" type="xsd:int"/>
-   <ns1:parameter qname="ns29:vendor" type="xsd:string"/>
-   <ns1:parameter qname="ns29:qty" type="xsd:int"/>
+  <ns1:operation name="sendPrintingJob" qname="ns30:sendPrintingJob" returnQName="ns30:sendPrintingJobReturn" returnType="xsd:string" soapAction="" xmlns:ns30="http://create_printing_job" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns30:purchaseID" type="xsd:int"/>
+   <ns1:parameter qname="ns30:vendor" type="xsd:string"/>
+   <ns1:parameter qname="ns30:qty" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="sendPrintingJob"/>
   <ns1:parameter name="wsdlPortType" value="SendForPrintingJob"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
+  <ns1:parameter name="schemaQualified" value="http://create_printing_job"/>
   <ns1:parameter name="wsdlServicePort" value="SendForPrintingJob"/>
-  <ns1:parameter name="className" value="mainpkg.SendForPrintingJob"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
+  <ns1:parameter name="className" value="create_printing_job.SendForPrintingJob"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://create_printing_job"/>
   <ns1:parameter name="wsdlServiceElement" value="SendForPrintingJobService"/>
  </ns1:service>
  <ns1:service name="GetAllPendingRecRecords" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getAllPendingRecRecords" qname="ns30:getAllPendingRecRecords" returnQName="ns30:getAllPendingRecRecordsReturn" returnType="ns30:Received" soapAction="" xmlns:ns30="http://mainpkg"/>
+  <ns1:operation name="getAllPendingRecRecords" qname="ns31:getAllPendingRecRecords" returnQName="ns31:getAllPendingRecRecordsReturn" returnType="ns31:Received" soapAction="" xmlns:ns31="http://mainpkg"/>
   <ns1:parameter name="allowedMethods" value="getAllPendingRecRecords"/>
   <ns1:parameter name="wsdlPortType" value="GetAllPendingRecRecords"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
@@ -279,7 +277,7 @@
   <ns1:parameter name="className" value="mainpkg.GetAllPendingRecRecords"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="GetAllPendingRecRecordsService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns31:Received" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Received" xmlns:ns31="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns32:Received" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.Received" xmlns:ns32="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="Reportorder" provider="java:RPC" style="document" use="literal">
   <ns1:parameter name="allowedMethods" value="*"/>
@@ -289,20 +287,6 @@
   <ns1:parameter name="wsdlServicePort" value="Reportorder"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="ReportorderService"/>
- </ns1:service>
- <ns1:service name="receiveFromPrinting" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="insertRecieveOrder" qname="ns32:insertRecieveOrder" returnQName="ns32:insertRecieveOrderReturn" returnType="xsd:string" soapAction="" xmlns:ns32="http://mainpkg" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns32:printID" type="xsd:int"/>
-   <ns1:parameter qname="ns32:receive" type="xsd:int"/>
-  </ns1:operation>
-  <ns1:parameter name="allowedMethods" value="insertRecieveOrder"/>
-  <ns1:parameter name="wsdlPortType" value="receiveFromPrinting"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServicePort" value="receiveFromPrinting"/>
-  <ns1:parameter name="className" value="mainpkg.receiveFromPrinting"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlServiceElement" value="receiveFromPrintingService"/>
  </ns1:service>
  <ns1:service name="ReceivePrintingJobDetails" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="receivePrintingJobDetails" qname="ns33:receivePrintingJobDetails" returnQName="ns33:receivePrintingJobDetailsReturn" returnType="ns33:ReceivePrintingJobDetailsIni" soapAction="" xmlns:ns33="http://view_printjob_receive">
@@ -348,18 +332,18 @@
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns37:ReceivedPrinting" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.ReceivedPrinting" xmlns:ns37="http://mainpkg"/>
  </ns1:service>
  <ns1:service name="GetPrintingJobSummary" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="getPrintingJobSummary" qname="ns38:getPrintingJobSummary" returnQName="ns38:getPrintingJobSummaryReturn" returnType="ns38:GetPrintingJobSummaryIni" soapAction="" xmlns:ns38="http://mainpkg">
+  <ns1:operation name="getPrintingJobSummary" qname="ns38:getPrintingJobSummary" returnQName="ns38:getPrintingJobSummaryReturn" returnType="ns38:GetPrintingJobSummaryIni" soapAction="" xmlns:ns38="http://view_printjob_receive">
    <ns1:parameter qname="ns38:pjid" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="getPrintingJobSummary"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="GetPrintingJobSummary"/>
-  <ns1:parameter name="className" value="mainpkg.GetPrintingJobSummary"/>
+  <ns1:parameter name="className" value="view_printjob_receive.GetPrintingJobSummary"/>
   <ns1:parameter name="wsdlServicePort" value="GetPrintingJobSummary"/>
-  <ns1:parameter name="schemaQualified" value="http://mainpkg"/>
-  <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
+  <ns1:parameter name="schemaQualified" value="http://view_printjob_receive"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://view_printjob_receive"/>
   <ns1:parameter name="wsdlServiceElement" value="GetPrintingJobSummaryService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns39:GetPrintingJobSummaryIni" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.GetPrintingJobSummaryIni" xmlns:ns39="http://mainpkg"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns39:GetPrintingJobSummaryIni" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:view_printjob_receive.GetPrintingJobSummaryIni" xmlns:ns39="http://view_printjob_receive"/>
  </ns1:service>
  <ns1:service name="ROReportView" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="report2" qname="ns40:report2" returnQName="ns40:report2Return" returnType="ns40:ROReport" soapAction="" xmlns:ns40="http://mainpkg"/>
@@ -372,6 +356,20 @@
   <ns1:parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
   <ns1:parameter name="wsdlServiceElement" value="ROReportViewService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns41:ROReport" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:mainpkg.ROReport" xmlns:ns41="http://mainpkg"/>
+ </ns1:service>
+ <ns1:service name="InsertReceiveFromPrinting" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="insertReceiveFromPrinting" qname="ns42:insertReceiveFromPrinting" returnQName="ns42:insertReceiveFromPrintingReturn" returnType="xsd:string" soapAction="" xmlns:ns42="http://manage_printing_job" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns42:printID" type="xsd:int"/>
+   <ns1:parameter qname="ns42:receive" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="insertReceiveFromPrinting"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="InsertReceiveFromPrinting"/>
+  <ns1:parameter name="className" value="manage_printing_job.InsertReceiveFromPrinting"/>
+  <ns1:parameter name="wsdlServicePort" value="InsertReceiveFromPrinting"/>
+  <ns1:parameter name="schemaQualified" value="http://manage_printing_job"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://manage_printing_job"/>
+  <ns1:parameter name="wsdlServiceElement" value="InsertReceiveFromPrintingService"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>

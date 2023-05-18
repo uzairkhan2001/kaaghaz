@@ -1,4 +1,4 @@
-package mainpkg;
+package manage_printing_job;
 
 public class ManagePrintingJobInitial {
 	public int Id;

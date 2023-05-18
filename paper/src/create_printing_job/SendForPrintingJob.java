@@ -1,4 +1,4 @@
-package mainpkg;
+package create_printing_job;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

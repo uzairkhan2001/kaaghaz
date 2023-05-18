@@ -1,4 +1,4 @@
-package mainpkg;
+package view_printjob_receive;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
