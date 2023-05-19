@@ -3,17 +3,17 @@
   <!-- Services from RecieveorderService WSDL service -->
 
   <service name="Recieveorder" provider="java:RPC" style="wrapped" use="literal">
-      <parameter name="wsdlTargetNamespace" value="http://mainpkg"/>
+      <parameter name="wsdlTargetNamespace" value="http://manage_purchase_order"/>
       <parameter name="wsdlServiceElement" value="RecieveorderService"/>
-      <parameter name="schemaQualified" value="http://mainpkg"/>
+      <parameter name="schemaQualified" value="http://manage_purchase_order"/>
       <parameter name="wsdlServicePort" value="Recieveorder"/>
-      <parameter name="className" value="mainpkg.Recieveorder"/>
+      <parameter name="className" value="manage_purchase_order.Recieveorder"/>
       <parameter name="wsdlPortType" value="Recieveorder"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://mainpkg" xmlns:retNS="http://mainpkg" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertRecieveOrder" qname="operNS:insertRecieveOrder" returnQName="retNS:insertRecieveOrderReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:purchaseID" type="tns:int"/>
-        <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:intact" type="tns:int"/>
-        <parameter xmlns:pns="http://mainpkg" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:damage" type="tns:int"/>
+      <operation xmlns:operNS="http://manage_purchase_order" xmlns:retNS="http://manage_purchase_order" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertRecieveOrder" qname="operNS:insertRecieveOrder" returnQName="retNS:insertRecieveOrderReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://manage_purchase_order" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:purchaseID" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_purchase_order" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:intact" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_purchase_order" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:damage" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="insertRecieveOrder"/>
 

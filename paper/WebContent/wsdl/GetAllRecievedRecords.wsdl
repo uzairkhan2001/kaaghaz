@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://manage_purchase_order" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://manage_purchase_order" xmlns:intf="http://manage_purchase_order" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
-  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+  <schema elementFormDefault="qualified" targetNamespace="http://manage_purchase_order" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="getAllRecievedRecords">
     <complexType/>
    </element>
    <element name="getAllRecievedRecordsResponse">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="getAllRecievedRecordsReturn" type="impl:Received"/>
+      <element maxOccurs="unbounded" name="getAllRecievedRecordsReturn" type="impl:GetReceivedRecordDetails"/>
      </sequence>
     </complexType>
    </element>
-   <complexType name="Received">
+   <complexType name="GetReceivedRecordDetails">
     <sequence>
      <element name="purchaseId" type="xsd:int"/>
      <element name="raw" nillable="true" type="xsd:string"/>
@@ -30,17 +30,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getAllRecievedRecordsResponse">
+   <wsdl:message name="getAllRecievedRecordsRequest">
 
-      <wsdl:part element="impl:getAllRecievedRecordsResponse" name="parameters">
+      <wsdl:part element="impl:getAllRecievedRecords" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getAllRecievedRecordsRequest">
+   <wsdl:message name="getAllRecievedRecordsResponse">
 
-      <wsdl:part element="impl:getAllRecievedRecords" name="parameters">
+      <wsdl:part element="impl:getAllRecievedRecordsResponse" name="parameters">
 
       </wsdl:part>
 

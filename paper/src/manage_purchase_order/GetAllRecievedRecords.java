@@ -1,4 +1,4 @@
-package mainpkg;
+package manage_purchase_order;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class GetAllRecievedRecords {
-	Received[] data = null;
+	GetReceivedRecordDetails[] data = null;
 
-	public Received[] getAllRecievedRecords() {
+	public GetReceivedRecordDetails[] getAllRecievedRecords() {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -18,12 +18,12 @@ public class GetAllRecievedRecords {
 
 			rs.last();
 			
-			data = new Received[rs.getRow()];
+			data = new GetReceivedRecordDetails[rs.getRow()];
 			rs.beforeFirst();
 			int i = 0;
 			while (rs.next()) {
 				
-				data[i] = new Received();
+				data[i] = new GetReceivedRecordDetails();
 				data[i].purchaseId = rs.getInt(1);
 				data[i].raw = rs.getString(2);
 				data[i].size = rs.getString(3);

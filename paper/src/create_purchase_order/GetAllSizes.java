@@ -1,4 +1,4 @@
-package mainpkg;
+package create_purchase_order;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class GetAllSizes {
-	Record[] data = null;
+	GetAllRecords[] data = null;
 
-	public Record[] getAllSizeID(int rawid) {
+	public GetAllRecords[] getAllSizeID(int rawid) {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -20,12 +20,12 @@ public class GetAllSizes {
 
 
 			
-			data = new Record[rs.getRow()];
+			data = new GetAllRecords[rs.getRow()];
 			rs.beforeFirst();
 			int i = 0;
 			while (rs.next()) {
 				
-				data[i] = new Record();
+				data[i] = new GetAllRecords();
 				data[i].id = rs.getInt(1);
 				data[i].name = rs.getString(2);
 

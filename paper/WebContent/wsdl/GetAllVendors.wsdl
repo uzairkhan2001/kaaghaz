@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://mainpkg" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://mainpkg" xmlns:intf="http://mainpkg" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://create_purchase_order" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://create_purchase_order" xmlns:intf="http://create_purchase_order" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
-  <schema elementFormDefault="qualified" targetNamespace="http://mainpkg" xmlns="http://www.w3.org/2001/XMLSchema">
+  <schema elementFormDefault="qualified" targetNamespace="http://create_purchase_order" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="getAllVendor">
     <complexType>
      <sequence>
@@ -15,11 +15,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="getAllVendorResponse">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="getAllVendorReturn" type="impl:Record"/>
+      <element maxOccurs="unbounded" name="getAllVendorReturn" type="impl:GetAllRecords"/>
      </sequence>
     </complexType>
    </element>
-   <complexType name="Record">
+   <complexType name="GetAllRecords">
     <sequence>
      <element name="id" type="xsd:int"/>
      <element name="name" nillable="true" type="xsd:string"/>
@@ -28,17 +28,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getAllVendorResponse">
+   <wsdl:message name="getAllVendorRequest">
 
-      <wsdl:part element="impl:getAllVendorResponse" name="parameters">
+      <wsdl:part element="impl:getAllVendor" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getAllVendorRequest">
+   <wsdl:message name="getAllVendorResponse">
 
-      <wsdl:part element="impl:getAllVendor" name="parameters">
+      <wsdl:part element="impl:getAllVendorResponse" name="parameters">
 
       </wsdl:part>
 
