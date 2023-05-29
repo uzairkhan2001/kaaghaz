@@ -1,2 +1,6 @@
-/manage_purchase_order/
+/create_printing_job/
+/create_purchase_order/
 /mainpkg/
+/manage_printing_job/
+/manage_purchase_order/
+/view_printjob_receive/
