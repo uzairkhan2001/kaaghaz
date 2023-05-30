@@ -15,7 +15,7 @@ try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT po.ID, rm.RawMaterialName, s.Size, w.Weight, v.Name, (COALESCE(SUM(ro.`Receive Intact`), 0) - (SELECT SUM(quantity) FROM sendforprinting WHERE sendforprinting.PID = po.ID)) AS Quantity_Available, sfp.quantity AS Quantity_Sent FROM purchaseorder po JOIN size s ON s.id = po.SizeID JOIN weight w ON w.id = po.WeightID JOIN vendor v ON v.ID = po.VendorID JOIN rawmaterialtype rm ON rm.RawMaterialId = po.rawmaterial_ID LEFT JOIN sendforprinting sfp ON sfp.PID = po.ID LEFT JOIN recieveorder ro ON po.ID = ro.`Purchase ID` WHERE rm.RawMaterialId = '"+category+"' GROUP BY po.`ID`");
+			ResultSet rs = stmt.executeQuery("SELECT po.ID, rm.RawMaterialName, s.Size, w.Weight, v.Name, ((SELECT SUM(`Receive Intact`) FROM recieveorder WHERE recieveorder.`Purchase ID` = po.ID) - COALESCE((SELECT SUM(quantity) FROM sendforprinting WHERE sendforprinting.PID = po.ID), 0)) AS Quantity_Available,COALESCE((SELECT SUM(quantity) FROM sendforprinting WHERE sendforprinting.PID = po.ID), 0) AS Quantity_Sent FROM purchaseorder po JOIN size s ON s.id = po.SizeID JOIN weight w ON w.id = po.WeightID JOIN vendor v ON v.ID = po.VendorID JOIN rawmaterialtype rm ON rm.RawMaterialId = po.rawmaterial_ID LEFT JOIN sendforprinting sfp ON sfp.PID = po.ID LEFT JOIN recieveorder ro ON po.ID = ro.`Purchase ID` WHERE rm.RawMaterialId = '"+category+"' GROUP BY po.`ID`");
 
 			rs.last();
 
