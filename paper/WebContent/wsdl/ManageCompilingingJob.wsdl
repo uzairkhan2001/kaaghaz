@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://manage_compiling_job" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://manage_compiling_job" xmlns:intf="http://manage_compiling_job" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://manage_compiling_job" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="manageCompilingJob">
+    <complexType>
+     <sequence>
+      <element name="category" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="manageCompilingJobResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="manageCompilingJobReturn" type="impl:ManageCompilingJobInitial"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ManageCompilingJobInitial">
+    <sequence>
+     <element name="Id" type="xsd:int"/>
+     <element name="printId" type="xsd:int"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="printvendor" nillable="true" type="xsd:string"/>
+     <element name="compilevendor" nillable="true" type="xsd:string"/>
+     <element name="total_Quan" type="xsd:int"/>
+     <element name="receive_Quan" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="manageCompilingJobResponse">
+
+      <wsdl:part element="impl:manageCompilingJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="manageCompilingJobRequest">
+
+      <wsdl:part element="impl:manageCompilingJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ManageCompilingingJob">
+
+      <wsdl:operation name="manageCompilingJob">
+
+         <wsdl:input message="impl:manageCompilingJobRequest" name="manageCompilingJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:manageCompilingJobResponse" name="manageCompilingJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ManageCompilingingJobSoapBinding" type="impl:ManageCompilingingJob">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="manageCompilingJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="manageCompilingJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="manageCompilingJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ManageCompilingingJobService">
+
+      <wsdl:port binding="impl:ManageCompilingingJobSoapBinding" name="ManageCompilingingJob">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/ManageCompilingingJob"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -26,6 +26,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      <element name="weight" nillable="true" type="xsd:string"/>
      <element name="vendor" nillable="true" type="xsd:string"/>
      <element name="Quan_available" type="xsd:int"/>
+     <element name="Quan_sent" type="xsd:int"/>
     </sequence>
    </complexType>
   </schema>

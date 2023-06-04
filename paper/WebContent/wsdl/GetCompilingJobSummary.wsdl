@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://view_compilejob_receive" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://view_compilejob_receive" xmlns:intf="http://view_compilejob_receive" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://view_compilejob_receive" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getPrintingJobSummary">
+    <complexType>
+     <sequence>
+      <element name="pjid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPrintingJobSummaryResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getPrintingJobSummaryReturn" type="impl:GetCompilingJobSummaryIni"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="GetCompilingJobSummaryIni">
+    <sequence>
+     <element name="compileId" type="xsd:int"/>
+     <element name="printId" type="xsd:int"/>
+     <element name="raw" nillable="true" type="xsd:string"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="povendor" nillable="true" type="xsd:string"/>
+     <element name="pjvendor" nillable="true" type="xsd:string"/>
+     <element name="cjvendor" nillable="true" type="xsd:string"/>
+     <element name="total_Quan" type="xsd:int"/>
+     <element name="receive_Quan" type="xsd:int"/>
+     <element name="time" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getPrintingJobSummaryRequest">
+
+      <wsdl:part element="impl:getPrintingJobSummary" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPrintingJobSummaryResponse">
+
+      <wsdl:part element="impl:getPrintingJobSummaryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GetCompilingJobSummary">
+
+      <wsdl:operation name="getPrintingJobSummary">
+
+         <wsdl:input message="impl:getPrintingJobSummaryRequest" name="getPrintingJobSummaryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPrintingJobSummaryResponse" name="getPrintingJobSummaryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="GetCompilingJobSummarySoapBinding" type="impl:GetCompilingJobSummary">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getPrintingJobSummary">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPrintingJobSummaryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPrintingJobSummaryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="GetCompilingJobSummaryService">
+
+      <wsdl:port binding="impl:GetCompilingJobSummarySoapBinding" name="GetCompilingJobSummary">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/GetCompilingJobSummary"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

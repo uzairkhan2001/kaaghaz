@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from GetQuantityService WSDL service -->
+  <!-- Services from ManageCompilingingJobService WSDL service -->
 
-  <service name="GetQuantity"/>
+  <service name="ManageCompilingingJob"/>
 </undeployment>

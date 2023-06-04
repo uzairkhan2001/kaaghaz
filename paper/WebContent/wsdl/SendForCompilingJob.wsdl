@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://create_compiling_job" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://create_compiling_job" xmlns:intf="http://create_compiling_job" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://create_compiling_job" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="sendForCompilingJob">
+    <complexType>
+     <sequence>
+      <element name="printID" type="xsd:int"/>
+      <element name="vendor" type="xsd:string"/>
+      <element name="qty" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendForCompilingJobResponse">
+    <complexType>
+     <sequence>
+      <element name="sendForCompilingJobReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sendForCompilingJobResponse">
+
+      <wsdl:part element="impl:sendForCompilingJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendForCompilingJobRequest">
+
+      <wsdl:part element="impl:sendForCompilingJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SendForCompilingJob">
+
+      <wsdl:operation name="sendForCompilingJob">
+
+         <wsdl:input message="impl:sendForCompilingJobRequest" name="sendForCompilingJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendForCompilingJobResponse" name="sendForCompilingJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SendForCompilingJobSoapBinding" type="impl:SendForCompilingJob">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="sendForCompilingJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendForCompilingJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendForCompilingJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SendForCompilingJobService">
+
+      <wsdl:port binding="impl:SendForCompilingJobSoapBinding" name="SendForCompilingJob">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/SendForCompilingJob"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

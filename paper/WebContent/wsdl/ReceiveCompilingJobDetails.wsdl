@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://view_compilejob_receive" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://view_compilejob_receive" xmlns:intf="http://view_compilejob_receive" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://view_compilejob_receive" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="receiveCompilingJobDetails">
+    <complexType>
+     <sequence>
+      <element name="pjid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="receiveCompilingJobDetailsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="receiveCompilingJobDetailsReturn" type="impl:ReceiveCompilingJobDetailsIni"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ReceiveCompilingJobDetailsIni">
+    <sequence>
+     <element name="recOrdId" type="xsd:int"/>
+     <element name="receiveQuantity" type="xsd:int"/>
+     <element name="time" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="receiveCompilingJobDetailsResponse">
+
+      <wsdl:part element="impl:receiveCompilingJobDetailsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="receiveCompilingJobDetailsRequest">
+
+      <wsdl:part element="impl:receiveCompilingJobDetails" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ReceiveCompilingJobDetails">
+
+      <wsdl:operation name="receiveCompilingJobDetails">
+
+         <wsdl:input message="impl:receiveCompilingJobDetailsRequest" name="receiveCompilingJobDetailsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:receiveCompilingJobDetailsResponse" name="receiveCompilingJobDetailsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ReceiveCompilingJobDetailsSoapBinding" type="impl:ReceiveCompilingJobDetails">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="receiveCompilingJobDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="receiveCompilingJobDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="receiveCompilingJobDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ReceiveCompilingJobDetailsService">
+
+      <wsdl:port binding="impl:ReceiveCompilingJobDetailsSoapBinding" name="ReceiveCompilingJobDetails">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/ReceiveCompilingJobDetails"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

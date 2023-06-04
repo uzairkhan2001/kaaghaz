@@ -33,6 +33,7 @@ try {
 				data[i].weight = rs.getString(4);
 				data[i].vendor = rs.getString(5);
 				data[i].Quan_available = rs.getInt(6);
+				data[i].Quan_sent = rs.getInt(7);
 
 				i++;
 			}

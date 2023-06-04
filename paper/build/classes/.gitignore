@@ -1,1 +1,5 @@
 /create_printing_job/
+/manage_printing_job/
+/create_compiling_job/
+/manage_compiling_job/
+/view_compilejob_receive/
