@@ -9,13 +9,13 @@ public class GetCompilingJobSummary {
 	
 	GetCompilingJobSummaryIni[] data = null;
 	
-	public GetCompilingJobSummaryIni[] getPrintingJobSummary(int pjid) {
+	public GetCompilingJobSummaryIni[] getCompilingJobSummary(int pjid) {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT sfc.ID, sfc.printID, rm.RawMaterialName, s.Size, w.Weight, v.Name AS Purchase_Vendor, pv.Name AS Printing_Vendor, cv.Name, sfp.quantity, SUM(rp.receivequan),sfp.time FROM purchaseorder po JOIN size s ON s.id = po.SizeID JOIN weight w ON w.id = po.WeightID JOIN vendor v ON v.ID = po.VendorID JOIN rawmaterialtype rm ON rm.RawMaterialId = po.rawmaterial_ID JOIN sendforprinting sfp ON sfp.PID = po.ID JOIN printingvendor pv ON pv.ID = sfp.printVendor JOIN receiveprinting rp ON sfp.ID = rp.printID JOIN sendforcompiling sfc ON sfc.printID = sfp.ID JOIN compilingvendor cv ON cv.ID = sfc.compilingVendor WHERE sfc.ID = "+pjid+";");
+			ResultSet rs = stmt.executeQuery("SELECT sfc.ID, sfc.printID, rm.RawMaterialName, s.Size, w.Weight, v.Name AS Purchase_Vendor, pv.Name AS Printing_Vendor, cv.Name, sfp.quantity, SUM(rc.receivequantity) ,sfp.time FROM purchaseorder po JOIN size s ON s.id = po.SizeID JOIN weight w ON w.id = po.WeightID JOIN vendor v ON v.ID = po.VendorID JOIN rawmaterialtype rm ON rm.RawMaterialId = po.rawmaterial_ID JOIN sendforprinting sfp ON sfp.PID = po.ID JOIN printingvendor pv ON pv.ID = sfp.printVendor JOIN sendforcompiling sfc ON sfc.printID = sfp.ID JOIN compilingvendor cv ON cv.ID = sfc.compilingVendor JOIN receivecompiling rc ON sfc.ID = rc.compileID WHERE sfc.ID = "+pjid+";");
 
 			rs.last();
 			

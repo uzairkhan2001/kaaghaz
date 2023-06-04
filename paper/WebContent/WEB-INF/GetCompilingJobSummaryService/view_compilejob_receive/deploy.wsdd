@@ -10,10 +10,10 @@
       <parameter name="className" value="view_compilejob_receive.GetCompilingJobSummary"/>
       <parameter name="wsdlPortType" value="GetCompilingJobSummary"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://view_compilejob_receive" xmlns:retNS="http://view_compilejob_receive" xmlns:rtns="http://view_compilejob_receive" name="getPrintingJobSummary" qname="operNS:getPrintingJobSummary" returnQName="retNS:getPrintingJobSummaryReturn" returnType="rtns:GetCompilingJobSummaryIni" soapAction="">
+      <operation xmlns:operNS="http://view_compilejob_receive" xmlns:retNS="http://view_compilejob_receive" xmlns:rtns="http://view_compilejob_receive" name="getCompilingJobSummary" qname="operNS:getCompilingJobSummary" returnQName="retNS:getCompilingJobSummaryReturn" returnType="rtns:GetCompilingJobSummaryIni" soapAction="">
         <parameter xmlns:pns="http://view_compilejob_receive" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pjid" type="tns:int"/>
       </operation>
-      <parameter name="allowedMethods" value="getPrintingJobSummary"/>
+      <parameter name="allowedMethods" value="getCompilingJobSummary"/>
 
       <typeMapping xmlns:ns="http://view_compilejob_receive" qname="ns:GetCompilingJobSummaryIni" type="java:view_compilejob_receive.GetCompilingJobSummaryIni" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>

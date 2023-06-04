@@ -4,17 +4,17 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://view_compilejob_receive" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="getPrintingJobSummary">
+   <element name="getCompilingJobSummary">
     <complexType>
      <sequence>
       <element name="pjid" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="getPrintingJobSummaryResponse">
+   <element name="getCompilingJobSummaryResponse">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="getPrintingJobSummaryReturn" type="impl:GetCompilingJobSummaryIni"/>
+      <element maxOccurs="unbounded" name="getCompilingJobSummaryReturn" type="impl:GetCompilingJobSummaryIni"/>
      </sequence>
     </complexType>
    </element>
@@ -36,17 +36,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getPrintingJobSummaryRequest">
+   <wsdl:message name="getCompilingJobSummaryResponse">
 
-      <wsdl:part element="impl:getPrintingJobSummary" name="parameters">
+      <wsdl:part element="impl:getCompilingJobSummaryResponse" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getPrintingJobSummaryResponse">
+   <wsdl:message name="getCompilingJobSummaryRequest">
 
-      <wsdl:part element="impl:getPrintingJobSummaryResponse" name="parameters">
+      <wsdl:part element="impl:getCompilingJobSummary" name="parameters">
 
       </wsdl:part>
 
@@ -54,13 +54,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="GetCompilingJobSummary">
 
-      <wsdl:operation name="getPrintingJobSummary">
+      <wsdl:operation name="getCompilingJobSummary">
 
-         <wsdl:input message="impl:getPrintingJobSummaryRequest" name="getPrintingJobSummaryRequest">
+         <wsdl:input message="impl:getCompilingJobSummaryRequest" name="getCompilingJobSummaryRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getPrintingJobSummaryResponse" name="getPrintingJobSummaryResponse">
+         <wsdl:output message="impl:getCompilingJobSummaryResponse" name="getCompilingJobSummaryResponse">
 
        </wsdl:output>
 
@@ -72,17 +72,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="getPrintingJobSummary">
+      <wsdl:operation name="getCompilingJobSummary">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getPrintingJobSummaryRequest">
+         <wsdl:input name="getCompilingJobSummaryRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getPrintingJobSummaryResponse">
+         <wsdl:output name="getCompilingJobSummaryResponse">
 
             <wsdlsoap:body use="literal"/>
 
