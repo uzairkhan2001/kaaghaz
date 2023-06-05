@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from InsertReceiveFromBindingService WSDL service -->
+
+  <service name="InsertReceiveFromBinding" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://manage_binding_job"/>
+      <parameter name="wsdlServiceElement" value="InsertReceiveFromBindingService"/>
+      <parameter name="schemaQualified" value="http://manage_binding_job"/>
+      <parameter name="wsdlServicePort" value="InsertReceiveFromBinding"/>
+      <parameter name="className" value="manage_binding_job.InsertReceiveFromBinding"/>
+      <parameter name="wsdlPortType" value="InsertReceiveFromBinding"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://manage_binding_job" xmlns:retNS="http://manage_binding_job" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertReceiveFromBinding" qname="operNS:insertReceiveFromBinding" returnQName="retNS:insertReceiveFromBindingReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:bindId" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receive" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="insertReceiveFromBinding"/>
+
+  </service>
+</deployment>

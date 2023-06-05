@@ -4,21 +4,21 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://view_bindingjob_receive" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="getCompilingJobSummary">
+   <element name="getBindingJobSummary">
     <complexType>
      <sequence>
       <element name="pjid" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
-   <element name="getCompilingJobSummaryResponse">
+   <element name="getBindingJobSummaryResponse">
     <complexType>
      <sequence>
-      <element maxOccurs="unbounded" name="getCompilingJobSummaryReturn" type="impl:GetCompilingJobSummaryIni"/>
+      <element maxOccurs="unbounded" name="getBindingJobSummaryReturn" type="impl:GetBindingJobSummaryIni"/>
      </sequence>
     </complexType>
    </element>
-   <complexType name="GetCompilingJobSummaryIni">
+   <complexType name="GetBindingJobSummaryIni">
     <sequence>
      <element name="bindId" type="xsd:int"/>
      <element name="compileId" type="xsd:int"/>
@@ -37,31 +37,31 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getCompilingJobSummaryRequest">
+   <wsdl:message name="getBindingJobSummaryRequest">
 
-      <wsdl:part element="impl:getCompilingJobSummary" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
-   <wsdl:message name="getCompilingJobSummaryResponse">
-
-      <wsdl:part element="impl:getCompilingJobSummaryResponse" name="parameters">
+      <wsdl:part element="impl:getBindingJobSummary" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:portType name="GetCompilingJobSummary">
+   <wsdl:message name="getBindingJobSummaryResponse">
 
-      <wsdl:operation name="getCompilingJobSummary">
+      <wsdl:part element="impl:getBindingJobSummaryResponse" name="parameters">
 
-         <wsdl:input message="impl:getCompilingJobSummaryRequest" name="getCompilingJobSummaryRequest">
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="GetBindingJobSummary">
+
+      <wsdl:operation name="getBindingJobSummary">
+
+         <wsdl:input message="impl:getBindingJobSummaryRequest" name="getBindingJobSummaryRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getCompilingJobSummaryResponse" name="getCompilingJobSummaryResponse">
+         <wsdl:output message="impl:getBindingJobSummaryResponse" name="getBindingJobSummaryResponse">
 
        </wsdl:output>
 
@@ -69,21 +69,21 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:portType>
 
-   <wsdl:binding name="GetCompilingJobSummarySoapBinding" type="impl:GetCompilingJobSummary">
+   <wsdl:binding name="GetBindingJobSummarySoapBinding" type="impl:GetBindingJobSummary">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="getCompilingJobSummary">
+      <wsdl:operation name="getBindingJobSummary">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getCompilingJobSummaryRequest">
+         <wsdl:input name="getBindingJobSummaryRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getCompilingJobSummaryResponse">
+         <wsdl:output name="getBindingJobSummaryResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -93,11 +93,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:binding>
 
-   <wsdl:service name="GetCompilingJobSummaryService">
+   <wsdl:service name="GetBindingJobSummaryService">
 
-      <wsdl:port binding="impl:GetCompilingJobSummarySoapBinding" name="GetCompilingJobSummary">
+      <wsdl:port binding="impl:GetBindingJobSummarySoapBinding" name="GetBindingJobSummary">
 
-         <wsdlsoap:address location="http://localhost:8080/paper/services/GetCompilingJobSummary"/>
+         <wsdlsoap:address location="http://localhost:8080/paper/services/GetBindingJobSummary"/>
 
       </wsdl:port>
 

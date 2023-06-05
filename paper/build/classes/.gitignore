@@ -1,5 +1,5 @@
-/create_printing_job/
-/manage_printing_job/
-/create_compiling_job/
+/create_bindind_job/
+/manage_binding_job/
+/view_compile_job/
+/view_bindingjob_receive/
 /manage_compiling_job/
-/view_compilejob_receive/

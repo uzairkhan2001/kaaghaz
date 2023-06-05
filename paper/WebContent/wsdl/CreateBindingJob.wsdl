@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://create_bindind_job" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://create_bindind_job" xmlns:intf="http://create_bindind_job" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://create_bindind_job" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="createBindingJob">
+    <complexType>
+     <sequence>
+      <element name="category" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createBindingJobResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="createBindingJobReturn" type="impl:CreateBindingJobIni"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="CreateBindingJobIni">
+    <sequence>
+     <element name="compileId" type="xsd:int"/>
+     <element name="raw" nillable="true" type="xsd:string"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="printvendor" nillable="true" type="xsd:string"/>
+     <element name="compilevendor" nillable="true" type="xsd:string"/>
+     <element name="Quan_available" type="xsd:int"/>
+     <element name="Quan_sent" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="createBindingJobRequest">
+
+      <wsdl:part element="impl:createBindingJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createBindingJobResponse">
+
+      <wsdl:part element="impl:createBindingJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CreateBindingJob">
+
+      <wsdl:operation name="createBindingJob">
+
+         <wsdl:input message="impl:createBindingJobRequest" name="createBindingJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createBindingJobResponse" name="createBindingJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CreateBindingJobSoapBinding" type="impl:CreateBindingJob">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="createBindingJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createBindingJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createBindingJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CreateBindingJobService">
+
+      <wsdl:port binding="impl:CreateBindingJobSoapBinding" name="CreateBindingJob">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/CreateBindingJob"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

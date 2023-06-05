@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://manage_binding_job" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://manage_binding_job" xmlns:intf="http://manage_binding_job" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://manage_binding_job" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="insertReceiveFromBinding">
+    <complexType>
+     <sequence>
+      <element name="bindId" type="xsd:int"/>
+      <element name="receive" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="insertReceiveFromBindingResponse">
+    <complexType>
+     <sequence>
+      <element name="insertReceiveFromBindingReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="insertReceiveFromBindingResponse">
+
+      <wsdl:part element="impl:insertReceiveFromBindingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="insertReceiveFromBindingRequest">
+
+      <wsdl:part element="impl:insertReceiveFromBinding" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="InsertReceiveFromBinding">
+
+      <wsdl:operation name="insertReceiveFromBinding">
+
+         <wsdl:input message="impl:insertReceiveFromBindingRequest" name="insertReceiveFromBindingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:insertReceiveFromBindingResponse" name="insertReceiveFromBindingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="InsertReceiveFromBindingSoapBinding" type="impl:InsertReceiveFromBinding">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="insertReceiveFromBinding">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="insertReceiveFromBindingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="insertReceiveFromBindingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="InsertReceiveFromBindingService">
+
+      <wsdl:port binding="impl:InsertReceiveFromBindingSoapBinding" name="InsertReceiveFromBinding">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/InsertReceiveFromBinding"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

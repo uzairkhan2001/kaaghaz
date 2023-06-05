@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://manage_binding_job" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://manage_binding_job" xmlns:intf="http://manage_binding_job" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://manage_binding_job" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="manageBindingJob">
+    <complexType>
+     <sequence>
+      <element name="category" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="manageBindingJobResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="manageBindingJobReturn" type="impl:ManageBindingJobInitial"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ManageBindingJobInitial">
+    <sequence>
+     <element name="Id" type="xsd:int"/>
+     <element name="compileId" type="xsd:int"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="weight" nillable="true" type="xsd:string"/>
+     <element name="vendor" nillable="true" type="xsd:string"/>
+     <element name="printvendor" nillable="true" type="xsd:string"/>
+     <element name="compilevendor" nillable="true" type="xsd:string"/>
+     <element name="bindvendor" nillable="true" type="xsd:string"/>
+     <element name="total_Quan" type="xsd:int"/>
+     <element name="receive_Quan" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="manageBindingJobRequest">
+
+      <wsdl:part element="impl:manageBindingJob" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="manageBindingJobResponse">
+
+      <wsdl:part element="impl:manageBindingJobResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ManageBindingingJob">
+
+      <wsdl:operation name="manageBindingJob">
+
+         <wsdl:input message="impl:manageBindingJobRequest" name="manageBindingJobRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:manageBindingJobResponse" name="manageBindingJobResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ManageBindingingJobSoapBinding" type="impl:ManageBindingingJob">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="manageBindingJob">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="manageBindingJobRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="manageBindingJobResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ManageBindingingJobService">
+
+      <wsdl:port binding="impl:ManageBindingingJobSoapBinding" name="ManageBindingingJob">
+
+         <wsdlsoap:address location="http://localhost:8080/paper/services/ManageBindingingJob"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
