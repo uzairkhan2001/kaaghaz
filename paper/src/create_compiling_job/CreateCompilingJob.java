@@ -8,14 +8,14 @@ import java.sql.Statement;
 public class CreateCompilingJob {
 	CreateCompilingJobIni[] data = null;
 
-	public CreateCompilingJobIni[] createCompilingJob(int category) {
+	public CreateCompilingJobIni[] createCompilingJob(int size,int weight) {
 
 try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT sfp.ID, rm.RawMaterialName, s.Size, w.Weight, v.Name, pv.Name, ((SELECT SUM(`receivequan`) FROM receiveprinting WHERE receiveprinting.`printID` = sfp.ID) - COALESCE((SELECT SUM(quantity) FROM sendforcompiling WHERE sendforcompiling.printID = sfp.ID), 0)) AS Quantity_Available,COALESCE((SELECT SUM(quantity) FROM sendforcompiling WHERE sendforcompiling.printID = sfp.ID), 0) AS Quantity_Sent FROM purchaseorder po JOIN size s ON s.id = po.SizeID JOIN weight w ON w.id = po.WeightID JOIN vendor v ON v.ID = po.VendorID JOIN rawmaterialtype rm ON rm.RawMaterialId = po.rawmaterial_ID LEFT JOIN sendforprinting sfp ON sfp.PID = po.ID LEFT JOIN sendforcompiling sfc ON sfp.ID = sfc.printID JOIN printingvendor pv ON pv.ID = sfp.printVendor WHERE rm.RawMaterialId = '"+category+"' GROUP BY sfp.`ID`");
+			ResultSet rs = stmt.executeQuery("SELECT rm.RawMaterialName, s.Size, w.Weight, SUM(rp.receivequan) FROM purchaseorder po LEFT JOIN size s ON s.id = po.SizeID LEFT JOIN weight w ON w.id = po.WeightID LEFT JOIN rawmaterialtype rm ON rm.RawMaterialId = po.rawmaterial_ID JOIN sendforprinting sfp ON sfp.PID = po.ID JOIN receiveprinting rp ON rp.printID = sfp.ID WHERE s.ID = "+size+" AND w.ID = "+weight+" GROUP BY rm.RawMaterialName;");
 
 			rs.last();
 
@@ -27,14 +27,10 @@ try {
 			while (rs.next()) {
 				
 				data[i] = new CreateCompilingJobIni();
-				data[i].printId = rs.getInt(1);
-				data[i].raw = rs.getString(2);
-				data[i].size = rs.getString(3);
-				data[i].weight = rs.getString(4);
-				data[i].vendor = rs.getString(5);
-				data[i].printvendor = rs.getString(6);
-				data[i].Quan_available = rs.getInt(7);
-				data[i].Quan_sent = rs.getInt(8);
+				data[i].raw = rs.getString(1);
+				data[i].size = rs.getString(2);
+				data[i].weight = rs.getString(3);
+				data[i].Quan_available = rs.getInt(4);
 
 				i++;
 			}
@@ -50,3 +46,5 @@ try {
 		return data;
 }
 }
+
+

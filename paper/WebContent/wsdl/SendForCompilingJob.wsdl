@@ -7,9 +7,12 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="sendForCompilingJob">
     <complexType>
      <sequence>
-      <element name="printID" type="xsd:int"/>
-      <element name="vendor" type="xsd:string"/>
-      <element name="qty" type="xsd:int"/>
+      <element name="size" type="xsd:int"/>
+      <element name="weight" type="xsd:string"/>
+      <element name="ven" type="xsd:int"/>
+      <element name="ppr" type="xsd:int"/>
+      <element name="tc" type="xsd:int"/>
+      <element name="sc" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>

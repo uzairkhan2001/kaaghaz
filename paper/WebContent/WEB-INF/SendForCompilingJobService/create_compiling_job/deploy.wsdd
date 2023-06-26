@@ -11,9 +11,12 @@
       <parameter name="wsdlPortType" value="SendForCompilingJob"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://create_compiling_job" xmlns:retNS="http://create_compiling_job" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendForCompilingJob" qname="operNS:sendForCompilingJob" returnQName="retNS:sendForCompilingJobReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:printID" type="tns:int"/>
-        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:vendor" type="tns:string"/>
-        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:qty" type="tns:int"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:size" type="tns:int"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:weight" type="tns:string"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ven" type="tns:int"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ppr" type="tns:int"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tc" type="tns:int"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:sc" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="sendForCompilingJob"/>
 

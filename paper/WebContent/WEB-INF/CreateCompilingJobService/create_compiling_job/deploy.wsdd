@@ -11,7 +11,8 @@
       <parameter name="wsdlPortType" value="CreateCompilingJob"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://create_compiling_job" xmlns:retNS="http://create_compiling_job" xmlns:rtns="http://create_compiling_job" name="createCompilingJob" qname="operNS:createCompilingJob" returnQName="retNS:createCompilingJobReturn" returnType="rtns:CreateCompilingJobIni" soapAction="">
-        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:category" type="tns:int"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:size" type="tns:int"/>
+        <parameter xmlns:pns="http://create_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:weight" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="createCompilingJob"/>
 

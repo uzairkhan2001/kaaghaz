@@ -7,14 +7,14 @@ import java.sql.Statement;
 public class ManageCompilingingJob {
 	ManageCompilingJobInitial[] data = null;
 
-	public ManageCompilingJobInitial[] manageCompilingJob(int category) {
+	public ManageCompilingJobInitial[] manageCompilingJob() {
 
 try {
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/fyp", "root", "");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("SELECT sfc.ID, sfc.printID, s.Size, w.Weight, v.Name AS Purchase_Vendor, pv.Name AS Printing_Vendor, cv.Name AS Compiling_Vendor, sfc.quantity, SUM(rc.receivequantity) AS Total_Receive_Quantity FROM purchaseorder po JOIN size s ON s.id = po.SizeID JOIN weight w ON w.id = po.WeightID JOIN vendor v ON v.ID = po.VendorID JOIN rawmaterialtype rm ON rm.RawMaterialId = po.rawmaterial_ID JOIN sendforprinting sfp ON sfp.PID = po.ID JOIN printingvendor pv ON pv.ID = sfp.printVendor LEFT JOIN sendforcompiling sfc ON sfc.printID = sfp.ID LEFT JOIN receivecompiling rc ON sfc.ID = rc.compileID JOIN compilingvendor cv ON cv.ID = sfc.compilingVendor WHERE po.rawmaterial_ID = "+category+" GROUP BY sfc.ID;");
+			ResultSet rs = stmt.executeQuery("SELECT sfc.`ID`, s.Size, w.Weight,cv.Name, `paperQuantity`, `titlecardQuantity`, `separatorcardQuantity`, `time` FROM `sendforcompiling` sfc JOIN Size s ON s.ID = sfc.Size JOIN Weight w ON w.ID = sfc.Weight JOIN compilingVendor cv ON cv.ID = sfc.compilingVendor;");
 
 			rs.last();
 
@@ -27,14 +27,12 @@ try {
 				
 				data[i] = new ManageCompilingJobInitial();
 				data[i].Id = rs.getInt(1);
-				data[i].printId = rs.getInt(2);
-				data[i].size = rs.getString(3);
-				data[i].weight = rs.getString(4);
-				data[i].vendor = rs.getString(5);
-				data[i].printvendor = rs.getString(6);
-				data[i].compilevendor = rs.getString(7);
-				data[i].total_Quan = rs.getInt(8);
-				data[i].receive_Quan = rs.getInt(9);
+				data[i].size = rs.getString(2);
+				data[i].weight = rs.getString(3);
+				data[i].compilevendor = rs.getString(4);
+				data[i].ppr_Quan = rs.getInt(5);
+				data[i].tc_Quan = rs.getInt(6);
+				data[i].sc_Quan = rs.getInt(7);
 
 				i++;
 			}

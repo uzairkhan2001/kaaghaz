@@ -8,7 +8,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="compileID" type="xsd:int"/>
-      <element name="receive" type="xsd:int"/>
+      <element name="paperQuantity" type="xsd:int"/>
+      <element name="titlecardQuantity" type="xsd:int"/>
+      <element name="separatorcardQuantity" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>

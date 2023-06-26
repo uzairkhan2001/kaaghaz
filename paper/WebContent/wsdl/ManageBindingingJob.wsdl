@@ -5,11 +5,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://manage_binding_job" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="manageBindingJob">
-    <complexType>
-     <sequence>
-      <element name="category" type="xsd:int"/>
-     </sequence>
-    </complexType>
+    <complexType/>
    </element>
    <element name="manageBindingJobResponse">
     <complexType>
@@ -21,15 +17,12 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <complexType name="ManageBindingJobInitial">
     <sequence>
      <element name="Id" type="xsd:int"/>
-     <element name="compileId" type="xsd:int"/>
      <element name="size" nillable="true" type="xsd:string"/>
      <element name="weight" nillable="true" type="xsd:string"/>
-     <element name="vendor" nillable="true" type="xsd:string"/>
-     <element name="printvendor" nillable="true" type="xsd:string"/>
-     <element name="compilevendor" nillable="true" type="xsd:string"/>
      <element name="bindvendor" nillable="true" type="xsd:string"/>
-     <element name="total_Quan" type="xsd:int"/>
-     <element name="receive_Quan" type="xsd:int"/>
+     <element name="ppr_Quan" type="xsd:int"/>
+     <element name="tc_Quan" type="xsd:int"/>
+     <element name="sc_Quan" type="xsd:int"/>
     </sequence>
    </complexType>
   </schema>

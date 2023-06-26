@@ -12,7 +12,9 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://manage_binding_job" xmlns:retNS="http://manage_binding_job" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertReceiveFromBinding" qname="operNS:insertReceiveFromBinding" returnQName="retNS:insertReceiveFromBindingReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:bindId" type="tns:int"/>
-        <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receive" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:paperQuantity" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:titlecardQuantity" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:separatorcardQuantity" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="insertReceiveFromBinding"/>
 

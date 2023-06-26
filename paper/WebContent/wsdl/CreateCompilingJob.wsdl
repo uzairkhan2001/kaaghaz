@@ -7,7 +7,8 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    <element name="createCompilingJob">
     <complexType>
      <sequence>
-      <element name="category" type="xsd:int"/>
+      <element name="size" type="xsd:int"/>
+      <element name="weight" type="xsd:int"/>
      </sequence>
     </complexType>
    </element>
@@ -20,12 +21,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </element>
    <complexType name="CreateCompilingJobIni">
     <sequence>
-     <element name="printId" type="xsd:int"/>
      <element name="raw" nillable="true" type="xsd:string"/>
      <element name="size" nillable="true" type="xsd:string"/>
      <element name="weight" nillable="true" type="xsd:string"/>
-     <element name="vendor" nillable="true" type="xsd:string"/>
-     <element name="printvendor" nillable="true" type="xsd:string"/>
      <element name="Quan_available" type="xsd:int"/>
      <element name="Quan_sent" type="xsd:int"/>
     </sequence>

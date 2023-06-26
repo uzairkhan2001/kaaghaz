@@ -11,9 +11,11 @@
       <parameter name="wsdlPortType" value="SendForBindingJob"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://create_bindind_job" xmlns:retNS="http://create_bindind_job" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendForBindingJob" qname="operNS:sendForBindingJob" returnQName="retNS:sendForBindingJobReturn" returnType="rtns:string" soapAction="">
-        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:compileId" type="tns:int"/>
-        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:vendor" type="tns:string"/>
-        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:qty" type="tns:int"/>
+        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:compileID" type="tns:int"/>
+        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:bindingVendor" type="tns:int"/>
+        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:paperQuantity" type="tns:int"/>
+        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:titlecardQuantity" type="tns:int"/>
+        <parameter xmlns:pns="http://create_bindind_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:separatorcardQuantity" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="sendForBindingJob"/>
 

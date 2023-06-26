@@ -1,5 +1,12 @@
 /create_bindind_job/
+/create_compiling_job/
+/create_printing_job/
+/create_purchase_order/
+/mainpkg/
 /manage_binding_job/
-/view_compile_job/
-/view_bindingjob_receive/
 /manage_compiling_job/
+/manage_printing_job/
+/manage_purchase_order/
+/view_bindingjob_receive/
+/view_compilejob_receive/
+/view_printjob_receive/

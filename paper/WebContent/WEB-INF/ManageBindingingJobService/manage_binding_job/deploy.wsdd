@@ -11,7 +11,6 @@
       <parameter name="wsdlPortType" value="ManageBindingingJob"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://manage_binding_job" xmlns:retNS="http://manage_binding_job" xmlns:rtns="http://manage_binding_job" name="manageBindingJob" qname="operNS:manageBindingJob" returnQName="retNS:manageBindingJobReturn" returnType="rtns:ManageBindingJobInitial" soapAction="">
-        <parameter xmlns:pns="http://manage_binding_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:category" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="manageBindingJob"/>
 

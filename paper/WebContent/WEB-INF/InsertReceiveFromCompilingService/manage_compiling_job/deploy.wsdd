@@ -12,7 +12,9 @@
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://manage_compiling_job" xmlns:retNS="http://manage_compiling_job" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="insertReceiveFromCompiling" qname="operNS:insertReceiveFromCompiling" returnQName="retNS:insertReceiveFromCompilingReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://manage_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:compileID" type="tns:int"/>
-        <parameter xmlns:pns="http://manage_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:receive" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:paperQuantity" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:titlecardQuantity" type="tns:int"/>
+        <parameter xmlns:pns="http://manage_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:separatorcardQuantity" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="insertReceiveFromCompiling"/>
 

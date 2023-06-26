@@ -11,7 +11,6 @@
       <parameter name="wsdlPortType" value="ManageCompilingingJob"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://manage_compiling_job" xmlns:retNS="http://manage_compiling_job" xmlns:rtns="http://manage_compiling_job" name="manageCompilingJob" qname="operNS:manageCompilingJob" returnQName="retNS:manageCompilingJobReturn" returnType="rtns:ManageCompilingJobInitial" soapAction="">
-        <parameter xmlns:pns="http://manage_compiling_job" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:category" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="manageCompilingJob"/>
 
