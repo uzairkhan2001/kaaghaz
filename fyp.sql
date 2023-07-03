@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 09:00 AM
+-- Generation Time: Jun 27, 2023 at 05:19 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,8 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `fyp`
 --
-CREATE DATABASE IF NOT EXISTS `fyp` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `fyp`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bindingvendor`
+--
+
+CREATE TABLE `bindingvendor` (
+  `ID` int(40) NOT NULL,
+  `Name` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bindingvendor`
+--
+
+INSERT INTO `bindingvendor` (`ID`, `Name`) VALUES
+(1, 'BJP'),
+(2, 'BXV'),
+(3, 'BQA'),
+(4, 'BTS');
 
 -- --------------------------------------------------------
 
@@ -55,7 +74,37 @@ INSERT INTO `catalog` (`ID`, `rawmaterial_ID`, `VendorID`, `SizeID`, `WeightID`)
 (11, 2, 4, 3, 7),
 (12, 3, 1, 5, 6),
 (13, 3, 2, 1, 8),
-(14, 2, 4, 4, 7);
+(14, 2, 4, 4, 7),
+(15, 3, 1, 2, 2),
+(16, 2, 1, 2, 2),
+(17, 1, 2, 3, 4),
+(18, 1, 5, 3, 1),
+(19, 3, 2, 3, 1),
+(20, 2, 2, 3, 1),
+(21, 1, 1, 1, 3),
+(22, 3, 5, 1, 3),
+(23, 2, 1, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `compilingvendor`
+--
+
+CREATE TABLE `compilingvendor` (
+  `ID` int(40) NOT NULL,
+  `Name` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `compilingvendor`
+--
+
+INSERT INTO `compilingvendor` (`ID`, `Name`) VALUES
+(1, 'CRP'),
+(2, 'CGH'),
+(3, 'CLO'),
+(4, 'CQA');
 
 -- --------------------------------------------------------
 
@@ -131,33 +180,24 @@ CREATE TABLE `purchaseorder` (
 --
 
 INSERT INTO `purchaseorder` (`ID`, `rawmaterial_ID`, `SizeID`, `WeightID`, `VendorID`, `Quantity`, `Time`) VALUES
-(3, 1, 1, 3, 4, 1350, '2022-12-30 18:20:46'),
-(4, 1, 3, 5, 1, 11234, '2022-12-30 18:20:55'),
-(5, 1, 1, 4, 3, 1555, '2022-12-30 18:21:03'),
-(6, 1, 1, 3, 4, 11290, '2022-12-30 18:21:13'),
-(7, 1, 2, 2, 3, 122222, '2022-12-30 18:21:23'),
-(8, 1, 1, 4, 3, 19876, '2022-12-30 18:21:32'),
-(9, 1, 3, 5, 1, 14444, '2022-12-30 18:21:49'),
-(10, 1, 3, 2, 3, 153, '2022-12-30 18:21:59'),
-(11, 1, 2, 5, 4, 12356789, '2022-12-30 18:22:09'),
-(12, 1, 1, 4, 3, 12423, '2022-12-30 18:22:17'),
-(13, 1, 1, 4, 3, 1250, '2022-12-30 18:22:27'),
-(14, 1, 3, 5, 1, 11234, '2022-12-30 18:22:37'),
-(15, 1, 1, 4, 3, 1100, '2022-12-30 18:22:46'),
-(16, 1, 3, 2, 2, 1199, '2022-12-30 18:22:55'),
-(17, 1, 3, 2, 2, 4323, '2022-12-30 18:23:08'),
-(18, 0, 3, 2, 2, 1200, '2022-12-31 19:11:27'),
-(19, 0, 5, 6, 1, 1234, '2022-12-31 19:12:22'),
-(20, 1, 1, 2, 3, 100, '2023-01-02 18:03:50'),
-(21, 1, 1, 2, 3, 100, '2023-01-02 18:04:04'),
-(22, 2, 3, 2, 1, 100, '2023-01-02 18:04:46'),
-(23, 3, 1, 3, 4, 2000, '2023-01-02 18:11:23'),
-(25, 1, 2, 2, 3, 999, '2023-01-23 05:43:02'),
-(26, 1, 2, 5, 4, 350, '2023-01-23 07:01:04'),
-(27, 1, 2, 5, 4, 50, '2023-03-15 06:05:34'),
-(28, 1, 2, 5, 4, 422, '2023-03-24 10:16:32'),
-(29, 1, 5, 6, 1, 9876, '2023-03-29 15:27:09'),
-(30, 3, 5, 4, 2, 555, '2023-03-30 14:53:31');
+(6, 1, 2, 2, 3, 350, '2023-05-19 11:38:22'),
+(8, 2, 3, 2, 2, 250, '2023-05-19 11:47:42'),
+(9, 1, 2, 5, 4, 150, '2023-05-19 17:13:38'),
+(10, 2, 3, 5, 1, 100, '2023-06-05 21:35:25'),
+(11, 2, 3, 7, 4, 100, '2023-06-05 21:36:56'),
+(12, 1, 2, 2, 3, 1000, '2023-06-09 15:49:14'),
+(13, 2, 2, 2, 3, 25, '2023-06-09 17:28:34'),
+(14, 3, 2, 2, 1, 25, '2023-06-09 17:29:03'),
+(15, 1, 3, 4, 2, 100, '2023-06-10 06:30:07'),
+(16, 2, 3, 4, 2, 100, '2023-06-10 06:33:30'),
+(17, 1, 3, 1, 2, 200, '2023-06-10 07:04:15'),
+(18, 2, 3, 1, 2, 200, '2023-06-10 07:04:29'),
+(19, 3, 3, 1, 2, 200, '2023-06-10 07:04:50'),
+(20, 1, 2, 5, 4, 120, '2023-06-10 09:06:49'),
+(21, 1, 3, 1, 2, 100, '2023-06-22 07:14:47'),
+(22, 1, 2, 5, 4, 200, '2023-06-22 07:37:16'),
+(23, 1, 2, 5, 4, 100, '2023-06-22 07:56:09'),
+(24, 2, 3, 5, 1, 100, '2023-06-22 08:16:06');
 
 -- --------------------------------------------------------
 
@@ -182,6 +222,55 @@ INSERT INTO `rawmaterialtype` (`RawMaterialId`, `RawMaterialName`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `receivebinding`
+--
+
+CREATE TABLE `receivebinding` (
+  `ID` int(40) NOT NULL,
+  `bindId` int(40) NOT NULL,
+  `paperQuantity` int(40) NOT NULL,
+  `titlecardQuantity` int(40) NOT NULL,
+  `separatorcardQuantity` int(40) NOT NULL,
+  `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `receivebinding`
+--
+
+INSERT INTO `receivebinding` (`ID`, `bindId`, `paperQuantity`, `titlecardQuantity`, `separatorcardQuantity`, `time`) VALUES
+(4, 4, 10, 5, 2, '2023-06-10 05:31:41.000000'),
+(5, 5, 10, 5, 6, '2023-06-10 07:08:35.000000'),
+(6, 6, 10, 5, 2, '2023-06-22 07:42:04.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `receivecompiling`
+--
+
+CREATE TABLE `receivecompiling` (
+  `ID` int(40) NOT NULL,
+  `compileID` int(40) NOT NULL,
+  `paperQuantity` int(40) NOT NULL,
+  `titlecardQuantity` int(40) NOT NULL,
+  `separatorcardQuantity` int(40) NOT NULL,
+  `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `receivecompiling`
+--
+
+INSERT INTO `receivecompiling` (`ID`, `compileID`, `paperQuantity`, `titlecardQuantity`, `separatorcardQuantity`, `time`) VALUES
+(6, 3, 10, 5, 2, '2023-06-09 21:26:37.000000'),
+(7, 4, 10, 5, 6, '2023-06-10 07:08:15.000000'),
+(8, 4, 10, 5, 6, '2023-06-22 07:41:34.000000'),
+(9, 6, 5, 5, 5, '2023-06-22 07:59:18.000000');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `receiveprinting`
 --
 
@@ -197,10 +286,22 @@ CREATE TABLE `receiveprinting` (
 --
 
 INSERT INTO `receiveprinting` (`ID`, `printID`, `receivequan`, `time`) VALUES
-(7, 3, 0, '2023-05-15 06:41:34.000000'),
-(8, 4, 0, '2023-05-15 08:02:48.000000'),
-(9, 5, 0, '2023-05-15 08:03:06.000000'),
-(10, 22, 0, '2023-05-15 19:25:49.000000');
+(10, 28, 25, '2023-05-30 06:35:44.000000'),
+(11, 24, 10, '2023-06-02 10:25:35.000000'),
+(12, 24, 20, '2023-06-02 10:25:45.000000'),
+(13, 26, 15, '2023-06-04 10:50:54.000000'),
+(14, 26, 15, '2023-06-04 10:51:15.000000'),
+(15, 32, 100, '2023-06-04 11:15:01.000000'),
+(16, 31, 20, '2023-06-04 11:15:07.000000'),
+(17, 33, 70, '2023-06-04 11:15:13.000000'),
+(18, 33, 100, '2023-06-04 11:15:18.000000'),
+(19, 34, 30, '2023-06-09 17:05:54.000000'),
+(20, 37, 25, '2023-06-09 17:31:31.000000'),
+(21, 38, 25, '2023-06-09 17:31:46.000000'),
+(22, 39, 20, '2023-06-10 07:14:08.000000'),
+(23, 40, 10, '2023-06-10 07:14:48.000000'),
+(24, 41, 10, '2023-06-10 07:15:54.000000'),
+(25, 47, 70, '2023-06-22 07:58:03.000000');
 
 -- --------------------------------------------------------
 
@@ -221,88 +322,75 @@ CREATE TABLE `recieveorder` (
 --
 
 INSERT INTO `recieveorder` (`ID`, `Purchase ID`, `Receive Intact`, `Receive Damage`, `Time`) VALUES
-(18, 2, 5, 4, '2022-10-04 12:07:21'),
-(19, 2, 14, 23, '2022-10-04 12:08:15'),
-(25, 3, 13, 12, '2022-10-04 18:08:48'),
-(26, 3, 10, 20, '2022-10-04 18:08:48'),
-(27, 3, 0, 4, '2022-10-04 18:33:50'),
-(28, 1, 4, 3, '2022-10-04 18:34:00'),
-(29, 2, 5, 4, '2022-10-05 04:49:45'),
-(31, 3, 5, 1, '2022-10-05 18:02:18'),
-(32, 4, 250, 150, '2022-10-05 18:07:36'),
-(33, 4, 984, 300, '2022-10-05 18:12:11'),
-(34, 5, 200, 10, '2022-10-05 18:53:11'),
-(35, 1, 4, 0, '2022-10-06 09:09:40'),
-(36, 1, 4, 3, '2022-10-06 09:09:54'),
-(37, 2, 5, 4, '2022-10-06 09:10:27'),
-(38, 3, 2, 3, '2022-10-06 09:23:32'),
-(39, 10, 10, 5, '2022-10-06 09:30:24'),
-(40, 10, 43, 0, '2022-10-06 09:31:37'),
-(41, 3, 250, 150, '2022-10-07 12:50:11'),
-(42, 3, 250, 150, '2022-10-07 12:50:23'),
-(43, 2, 221, 0, '2022-10-07 12:51:34'),
-(44, 2, 5, 4, '2022-10-08 11:19:33'),
-(45, 5, 100, 101, '2022-10-09 17:53:54'),
-(78, 5, 0, 0, '2022-10-10 04:48:51'),
-(79, 2, 5, 4, '2022-10-10 04:54:09'),
-(80, 1, 4, 3, '2022-10-10 10:14:30'),
-(81, 12, 234, 10, '2022-10-10 10:16:40'),
-(82, 12, 2189, 100, '2022-10-10 10:16:52'),
-(83, 1, 4, 3, '2022-10-10 10:18:10'),
-(84, 13, 150, 20, '2022-10-10 10:18:52'),
-(85, 13, 100, 10, '2022-10-10 10:40:40'),
-(86, 6, 1390, 20, '2022-10-11 15:17:28'),
-(87, 8, 9877, 20, '2022-10-11 15:19:44'),
-(88, 7, 250, 300, '2022-10-11 15:23:15'),
-(89, 7, 22222, 20, '2022-10-11 15:23:54'),
-(90, 11, 155, 255, '2022-10-11 15:25:03'),
-(91, 11, 23456789, 300, '2022-10-11 15:25:23'),
-(92, 5, 8, 9, '2022-10-11 15:31:05'),
-(93, 11, 8, 9, '2022-10-11 15:31:26'),
-(94, 5, 8, 9, '2022-10-11 15:35:12'),
-(95, 5, 240, 200, '2022-10-12 05:18:07'),
-(96, 9, 5555, 50, '2022-10-12 05:18:33'),
-(97, 9, 60, 70, '2022-10-12 05:18:46'),
-(98, 9, 250, 20, '2022-10-12 05:19:29'),
-(99, 2, 8, 9, '2022-10-12 05:22:05'),
-(100, 1, 4, 3, '2022-10-16 11:13:54'),
-(101, 3, 5, 1, '2022-10-17 07:32:25'),
-(102, 2, 26, 29, '2022-10-17 09:58:48'),
-(103, 14, 12345, 12, '2022-10-17 10:02:44'),
-(104, 1, 4, 3, '2022-10-17 10:35:45'),
-(105, 15, 10, 95, '2022-10-17 10:36:18'),
-(106, 3, 2, 2, '2022-10-17 10:38:08'),
-(107, 16, 100, 100, '2022-10-17 10:38:37'),
-(108, 16, 250, 150, '2022-10-17 10:42:26'),
-(109, 10, 100, 10, '2022-10-17 11:07:29'),
-(110, 13, 1000, 5, '2022-10-17 11:07:59'),
-(111, 15, 1000, 5, '2022-10-17 11:11:01'),
-(112, 3, 2, 2, '2022-12-04 09:57:35'),
-(113, 0, 0, 0, '2022-12-04 10:21:00'),
-(114, 0, 0, 0, '2022-12-13 10:18:58'),
-(115, 3, 2, 2, '2022-12-31 19:11:27'),
-(116, 5, 6, 1, '2022-12-31 19:12:22'),
-(117, 16, 500, 99, '2022-12-31 19:17:36'),
-(118, 1, 3, 4, '2023-01-02 18:11:23'),
-(119, 3, 2, 3, '2023-01-22 18:51:55'),
-(120, 2, 2, 3, '2023-01-23 05:43:02'),
-(121, 25, 80, 910, '2023-01-23 05:44:30'),
-(122, 2, 5, 4, '2023-01-23 07:01:04'),
-(123, 17, 4323, 0, '2023-01-23 07:02:24'),
-(124, 26, 250, 10, '2023-01-23 07:03:17'),
-(125, 26, 90, 0, '2023-01-23 07:04:06'),
-(126, 24, 5000, 5, '2023-03-15 05:31:10'),
-(127, 23, 50, 10, '2023-03-15 05:55:31'),
-(128, 22, 3, 2, '2023-03-15 05:58:02'),
-(129, 22, 3, 2, '2023-03-15 05:58:54'),
-(130, 22, 3, 2, '2023-03-15 06:00:58'),
-(131, 22, 3, 2, '2023-03-15 06:04:02'),
-(132, 22, 3, 2, '2023-03-15 06:04:14'),
-(133, 2, 5, 4, '2023-03-15 06:05:34'),
-(134, 27, 3, 4, '2023-03-21 14:46:33'),
-(135, 2, 5, 4, '2023-03-24 10:16:32'),
-(136, 5, 6, 1, '2023-03-29 15:27:09'),
-(137, 5, 4, 2, '2023-03-30 14:53:31');
+(7, 8, 200, 10, '2023-05-19 17:12:54'),
+(8, 9, 10, 10, '2023-05-19 17:15:42'),
+(9, 6, 240, 10, '2023-05-22 11:38:13'),
+(10, 6, 90, 10, '2023-05-22 11:38:29'),
+(11, 9, 100, 10, '2023-05-30 06:13:44'),
+(12, 9, 10, 10, '2023-05-30 06:14:03'),
+(13, 10, 90, 10, '2023-06-09 15:50:16'),
+(14, 13, 25, 0, '2023-06-09 17:29:32'),
+(15, 14, 25, 0, '2023-06-09 17:29:41'),
+(16, 17, 100, 10, '2023-06-10 07:05:18'),
+(17, 18, 100, 10, '2023-06-10 07:05:29'),
+(18, 19, 100, 10, '2023-06-10 07:05:43'),
+(19, 21, 50, 10, '2023-06-22 07:15:26'),
+(20, 22, 100, 10, '2023-06-22 07:39:38'),
+(21, 23, 90, 10, '2023-06-22 07:56:38'),
+(22, 24, 90, 10, '2023-06-22 08:16:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sendforbinding`
+--
+
+CREATE TABLE `sendforbinding` (
+  `ID` int(40) NOT NULL,
+  `compileId` int(40) NOT NULL,
+  `bindingVendor` int(40) NOT NULL,
+  `paperQuantity` int(40) NOT NULL,
+  `titlecardQuantity` int(40) NOT NULL,
+  `separatorcardQuantity` int(40) NOT NULL,
+  `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sendforbinding`
+--
+
+INSERT INTO `sendforbinding` (`ID`, `compileId`, `bindingVendor`, `paperQuantity`, `titlecardQuantity`, `separatorcardQuantity`, `time`) VALUES
+(4, 3, 2, 10, 5, 2, '2023-06-09 23:24:50.000000'),
+(5, 4, 2, 10, 5, 6, '2023-06-10 07:08:26.000000'),
+(6, 3, 2, 10, 5, 2, '2023-06-22 07:41:55.000000'),
+(7, 6, 2, 5, 5, 5, '2023-06-22 07:59:42.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sendforcompiling`
+--
+
+CREATE TABLE `sendforcompiling` (
+  `ID` int(40) NOT NULL,
+  `Size` int(40) NOT NULL,
+  `Weight` int(40) NOT NULL,
+  `compilingVendor` int(40) NOT NULL,
+  `paperQuantity` int(40) NOT NULL,
+  `titlecardQuantity` int(40) NOT NULL,
+  `separatorcardQuantity` int(40) NOT NULL,
+  `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sendforcompiling`
+--
+
+INSERT INTO `sendforcompiling` (`ID`, `Size`, `Weight`, `compilingVendor`, `paperQuantity`, `titlecardQuantity`, `separatorcardQuantity`, `time`) VALUES
+(3, 2, 2, 3, 10, 5, 2, '2023-06-09 19:23:18.000000'),
+(4, 2, 2, 3, 10, 5, 6, '2023-06-10 07:08:04.000000'),
+(5, 3, 1, 2, 10, 5, 5, '2023-06-22 07:41:13.000000'),
+(6, 3, 1, 3, 5, 5, 5, '2023-06-22 07:59:01.000000');
 
 -- --------------------------------------------------------
 
@@ -315,7 +403,6 @@ CREATE TABLE `sendforprinting` (
   `PID` int(40) NOT NULL,
   `printVendor` int(40) NOT NULL,
   `quantity` int(40) NOT NULL,
-  `ReceiveFromPrinting` int(11) NOT NULL,
   `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -323,11 +410,30 @@ CREATE TABLE `sendforprinting` (
 -- Dumping data for table `sendforprinting`
 --
 
-INSERT INTO `sendforprinting` (`ID`, `PID`, `printVendor`, `quantity`, `ReceiveFromPrinting`, `time`) VALUES
-(1, 3, 1, 10, 0, '2023-05-15 06:41:34.000000'),
-(2, 4, 1, 50, 0, '2023-05-15 08:02:48.000000'),
-(3, 5, 1, 10, 0, '2023-05-15 08:03:06.000000'),
-(4, 22, 4, 2, 0, '2023-05-15 19:25:50.000000');
+INSERT INTO `sendforprinting` (`ID`, `PID`, `printVendor`, `quantity`, `time`) VALUES
+(24, 6, 2, 30, '2023-05-22 11:50:38.000000'),
+(26, 6, 2, 30, '2023-05-29 15:40:50.000000'),
+(27, 6, 3, 20, '2023-05-29 15:46:31.000000'),
+(28, 8, 3, 25, '2023-05-29 16:12:47.000000'),
+(29, 6, 2, 50, '2023-05-30 06:20:37.000000'),
+(30, 6, 2, 30, '2023-06-04 10:42:13.000000'),
+(31, 9, 2, 20, '2023-06-04 10:47:12.000000'),
+(32, 9, 2, 100, '2023-06-04 10:47:25.000000'),
+(33, 6, 3, 170, '2023-06-04 10:47:54.000000'),
+(34, 10, 3, 40, '2023-06-09 15:51:05.000000'),
+(35, 10, 4, 40, '2023-06-09 15:51:17.000000'),
+(36, 10, 3, 10, '2023-06-09 15:51:28.000000'),
+(37, 13, 2, 25, '2023-06-09 17:30:07.000000'),
+(38, 14, 3, 25, '2023-06-09 17:30:29.000000'),
+(39, 17, 2, 20, '2023-06-10 07:06:04.000000'),
+(40, 18, 3, 20, '2023-06-10 07:06:33.000000'),
+(41, 19, 2, 20, '2023-06-10 07:06:53.000000'),
+(42, 21, 2, 20, '2023-06-22 07:15:47.000000'),
+(43, 22, 2, 20, '2023-06-22 07:40:11.000000'),
+(44, 17, 4, 10, '2023-06-22 07:46:48.000000'),
+(45, 19, 3, 20, '2023-06-22 07:47:27.000000'),
+(46, 17, 3, 10, '2023-06-22 07:49:33.000000'),
+(47, 23, 3, 80, '2023-06-22 07:57:40.000000');
 
 -- --------------------------------------------------------
 
@@ -403,9 +509,25 @@ INSERT INTO `weight` (`ID`, `Weight`) VALUES
 --
 
 --
+-- Indexes for table `bindingvendor`
+--
+ALTER TABLE `bindingvendor`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `catalog`
 --
 ALTER TABLE `catalog`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `rawmaterial_ID` (`rawmaterial_ID`),
+  ADD KEY `SizeID` (`SizeID`),
+  ADD KEY `VendorID` (`VendorID`),
+  ADD KEY `WeightID` (`WeightID`);
+
+--
+-- Indexes for table `compilingvendor`
+--
+ALTER TABLE `compilingvendor`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -424,7 +546,11 @@ ALTER TABLE `printingvendor`
 -- Indexes for table `purchaseorder`
 --
 ALTER TABLE `purchaseorder`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `rawmaterial_ID` (`rawmaterial_ID`),
+  ADD KEY `SizeID` (`SizeID`),
+  ADD KEY `VendorID` (`VendorID`),
+  ADD KEY `WeightID` (`WeightID`);
 
 --
 -- Indexes for table `rawmaterialtype`
@@ -433,24 +559,57 @@ ALTER TABLE `rawmaterialtype`
   ADD PRIMARY KEY (`RawMaterialId`);
 
 --
+-- Indexes for table `receivebinding`
+--
+ALTER TABLE `receivebinding`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `bindId` (`bindId`);
+
+--
+-- Indexes for table `receivecompiling`
+--
+ALTER TABLE `receivecompiling`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `compileID` (`compileID`);
+
+--
 -- Indexes for table `receiveprinting`
 --
 ALTER TABLE `receiveprinting`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `printID` (`printID`);
 
 --
 -- Indexes for table `recieveorder`
 --
 ALTER TABLE `recieveorder`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `Purchase ID` (`Purchase ID`);
+
+--
+-- Indexes for table `sendforbinding`
+--
+ALTER TABLE `sendforbinding`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `compileId` (`compileId`),
+  ADD KEY `bindingVendor` (`bindingVendor`);
+
+--
+-- Indexes for table `sendforcompiling`
+--
+ALTER TABLE `sendforcompiling`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `compilingVendor` (`compilingVendor`),
+  ADD KEY `Size` (`Size`),
+  ADD KEY `Weight` (`Weight`);
 
 --
 -- Indexes for table `sendforprinting`
 --
 ALTER TABLE `sendforprinting`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `PID` (`PID`),
-  ADD KEY `printVendor` (`printVendor`);
+  ADD KEY `printVendor` (`printVendor`),
+  ADD KEY `PID` (`PID`);
 
 --
 -- Indexes for table `size`
@@ -475,10 +634,22 @@ ALTER TABLE `weight`
 --
 
 --
+-- AUTO_INCREMENT for table `bindingvendor`
+--
+ALTER TABLE `bindingvendor`
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `catalog`
 --
 ALTER TABLE `catalog`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `compilingvendor`
+--
+ALTER TABLE `compilingvendor`
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `inventory`
@@ -496,7 +667,7 @@ ALTER TABLE `printingvendor`
 -- AUTO_INCREMENT for table `purchaseorder`
 --
 ALTER TABLE `purchaseorder`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `rawmaterialtype`
@@ -505,22 +676,46 @@ ALTER TABLE `rawmaterialtype`
   MODIFY `RawMaterialId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `receivebinding`
+--
+ALTER TABLE `receivebinding`
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `receivecompiling`
+--
+ALTER TABLE `receivecompiling`
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `receiveprinting`
 --
 ALTER TABLE `receiveprinting`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `recieveorder`
 --
 ALTER TABLE `recieveorder`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `sendforbinding`
+--
+ALTER TABLE `sendforbinding`
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `sendforcompiling`
+--
+ALTER TABLE `sendforcompiling`
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `sendforprinting`
 --
 ALTER TABLE `sendforprinting`
-  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `size`
@@ -545,11 +740,60 @@ ALTER TABLE `weight`
 --
 
 --
+-- Constraints for table `catalog`
+--
+ALTER TABLE `catalog`
+  ADD CONSTRAINT `catalog_ibfk_1` FOREIGN KEY (`rawmaterial_ID`) REFERENCES `rawmaterialtype` (`RawMaterialId`),
+  ADD CONSTRAINT `catalog_ibfk_2` FOREIGN KEY (`SizeID`) REFERENCES `size` (`ID`),
+  ADD CONSTRAINT `catalog_ibfk_3` FOREIGN KEY (`VendorID`) REFERENCES `vendor` (`ID`),
+  ADD CONSTRAINT `catalog_ibfk_4` FOREIGN KEY (`WeightID`) REFERENCES `weight` (`ID`);
+
+--
+-- Constraints for table `purchaseorder`
+--
+ALTER TABLE `purchaseorder`
+  ADD CONSTRAINT `purchaseorder_ibfk_1` FOREIGN KEY (`rawmaterial_ID`) REFERENCES `rawmaterialtype` (`RawMaterialId`),
+  ADD CONSTRAINT `purchaseorder_ibfk_2` FOREIGN KEY (`SizeID`) REFERENCES `size` (`ID`),
+  ADD CONSTRAINT `purchaseorder_ibfk_3` FOREIGN KEY (`VendorID`) REFERENCES `vendor` (`ID`),
+  ADD CONSTRAINT `purchaseorder_ibfk_4` FOREIGN KEY (`WeightID`) REFERENCES `weight` (`ID`);
+
+--
+-- Constraints for table `receivebinding`
+--
+ALTER TABLE `receivebinding`
+  ADD CONSTRAINT `receivebinding_ibfk_1` FOREIGN KEY (`bindId`) REFERENCES `sendforbinding` (`ID`);
+
+--
+-- Constraints for table `receiveprinting`
+--
+ALTER TABLE `receiveprinting`
+  ADD CONSTRAINT `receiveprinting_ibfk_1` FOREIGN KEY (`printID`) REFERENCES `sendforprinting` (`ID`);
+
+--
+-- Constraints for table `recieveorder`
+--
+ALTER TABLE `recieveorder`
+  ADD CONSTRAINT `recieveorder_ibfk_1` FOREIGN KEY (`Purchase ID`) REFERENCES `purchaseorder` (`ID`);
+
+--
+-- Constraints for table `sendforbinding`
+--
+ALTER TABLE `sendforbinding`
+  ADD CONSTRAINT `sendforbinding_ibfk_2` FOREIGN KEY (`bindingVendor`) REFERENCES `bindingvendor` (`ID`);
+
+--
+-- Constraints for table `sendforcompiling`
+--
+ALTER TABLE `sendforcompiling`
+  ADD CONSTRAINT `sendforcompiling_ibfk_1` FOREIGN KEY (`Size`) REFERENCES `size` (`ID`),
+  ADD CONSTRAINT `sendforcompiling_ibfk_2` FOREIGN KEY (`Weight`) REFERENCES `weight` (`ID`);
+
+--
 -- Constraints for table `sendforprinting`
 --
 ALTER TABLE `sendforprinting`
-  ADD CONSTRAINT `sendforprinting_ibfk_1` FOREIGN KEY (`PID`) REFERENCES `purchaseorder` (`ID`),
-  ADD CONSTRAINT `sendforprinting_ibfk_2` FOREIGN KEY (`printVendor`) REFERENCES `printingvendor` (`ID`);
+  ADD CONSTRAINT `sendforprinting_ibfk_2` FOREIGN KEY (`printVendor`) REFERENCES `printingvendor` (`ID`),
+  ADD CONSTRAINT `sendforprinting_ibfk_3` FOREIGN KEY (`PID`) REFERENCES `purchaseorder` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
